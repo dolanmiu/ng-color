@@ -1,16 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicColorPicker } from './src/sample.component';
-import { SampleDirective } from './src/sample.directive';
-import { SamplePipe } from './src/sample.pipe';
-import { SampleService } from './src/sample.service';
+import { IonicColorPickerSlider } from './sample.component';
+import { IonicColorPicker } from './color-picker.component';
+import { SampleDirective } from './sample.directive';
+import { SamplePipe } from './sample.pipe';
+import { SampleService } from './sample.service';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { FormsModule } from '@angular/forms';
-
-export * from './src/sample.component';
-export * from './src/sample.directive';
-export * from './src/sample.pipe';
-export * from './src/sample.service';
 
 @NgModule({
   imports: [
@@ -19,12 +15,14 @@ export * from './src/sample.service';
     IonicModule
   ],
   declarations: [
+    IonicColorPickerSlider,
     IonicColorPicker,
     SampleDirective,
     SamplePipe
   ],
   bootstrap: [IonicApp],
   exports: [
+    IonicColorPickerSlider,
     IonicColorPicker,
     SampleDirective,
     SamplePipe

@@ -11,7 +11,7 @@ export interface Colors {
 }
 
 @Component({
-    selector: 'ionic-color-picker',
+    selector: 'ionic-color-picker-slider',
     template: `
         <ion-list>
             <ion-item>
@@ -29,11 +29,11 @@ export interface Colors {
   `,
     providers: [{
         provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => IonicColorPicker),
+        useExisting: forwardRef(() => IonicColorPickerSlider),
         multi: true
     }]
 })
-export class IonicColorPicker implements ControlValueAccessor {
+export class IonicColorPickerSlider implements ControlValueAccessor {
     public red: string;
     public green: string;
     public blue: string;
