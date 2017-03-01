@@ -7,6 +7,8 @@ import { SamplePipe } from './sample.pipe';
 import { SampleService } from './sample.service';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { FormsModule } from '@angular/forms';
+import { SliderDirective } from './slider.directive';
+import { TextDirective } from './text.directive';
 
 @NgModule({
   imports: [
@@ -18,7 +20,9 @@ import { FormsModule } from '@angular/forms';
     IonicColorPickerSlider,
     IonicColorPicker,
     SampleDirective,
-    SamplePipe
+    SamplePipe,
+    SliderDirective,
+    TextDirective
   ],
   bootstrap: [IonicApp],
   exports: [
