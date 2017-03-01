@@ -18,7 +18,7 @@ import { ColorPickerDirective, DialogComponent, TextDirective, SliderDirective }
   ],
   declarations: [
     //IonicColorPickerSlider,
-    //IonicColorPicker,
+    IonicColorPicker,
     //SliderDirective,
     //TextDirective
     ColorPickerDirective,
@@ -27,7 +27,7 @@ import { ColorPickerDirective, DialogComponent, TextDirective, SliderDirective }
   bootstrap: [IonicApp],
   exports: [
     //IonicColorPickerSlider,
-    //IonicColorPicker,
+    IonicColorPicker,
     ColorPickerDirective,
     DialogComponent, TextDirective, SliderDirective
   ],
