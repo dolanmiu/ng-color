@@ -7,10 +7,8 @@ import { SamplePipe } from './sample.pipe';
 import { SampleService } from './sample.service';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { FormsModule } from '@angular/forms';
-import { SliderDirective } from './slider.directive';
-import { TextDirective } from './text.directive';
-import {ColorPickerService} from './color-picker.service';
-import {ColorPickerDirective} from './color-picker.directive';
+import { ColorPickerService } from './color-picker.service';
+import { ColorPickerDirective, DialogComponent, TextDirective, SliderDirective } from './color-picker.directive';
 
 @NgModule({
   imports: [
@@ -24,12 +22,14 @@ import {ColorPickerDirective} from './color-picker.directive';
     //SliderDirective,
     //TextDirective
     ColorPickerDirective,
+    DialogComponent, TextDirective, SliderDirective
   ],
   bootstrap: [IonicApp],
   exports: [
     //IonicColorPickerSlider,
     //IonicColorPicker,
-    ColorPickerDirective
+    ColorPickerDirective,
+    DialogComponent, TextDirective, SliderDirective
   ],
   providers: [
     ColorPickerService

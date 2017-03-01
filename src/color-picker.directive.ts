@@ -3,6 +3,7 @@ import {ColorPickerService} from './color-picker.service';
 import {Rgba, Hsla, Hsva, SliderPosition, SliderDimension} from './classes';
 import {NgModule, Compiler, ReflectiveInjector} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SampleModule } from './color-picker.module';
 
 @Directive({
     selector: '[colorPicker]',
@@ -79,7 +80,7 @@ export class ColorPickerDirective implements OnInit, OnChanges {
     openDialog() {
         if (!this.created) {
             this.created = true;
-            this.compiler.compileModuleAndAllComponentsAsync(DynamicCpModule)
+            this.compiler.compileModuleAndAllComponentsAsync(SampleModule)
                 .then(factory => {
                     const compFactory = factory.componentFactories.find(x => x.componentType === DialogComponent);
                     const injector = ReflectiveInjector.fromResolvedProviders([], this.vcRef.parentInjector);
@@ -887,9 +888,3 @@ export class DialogComponent implements OnInit {
         };
     }
 }
-
-@NgModule({
-    imports: [BrowserModule],
-    declarations: [DialogComponent, TextDirective, SliderDirective]
-})
-class DynamicCpModule { };
