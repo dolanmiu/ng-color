@@ -8,7 +8,8 @@ import { Colors } from './sample.component';
     selector: 'ionic-color-picker',
     template: `
         <div class="ionic-color-picker">
-            <div class="arrow arrow-{{cpPosition}}" [style.top.px]="arrowTop"></div>
+            <saturation-lightness-box></saturation-lightness-box>
+            <!--<div class="arrow arrow-{{cpPosition}}" [style.top.px]="arrowTop"></div>-->
 
             <div class="saturation-lightness">
                 <!--<div [style.left.px]="slider.s" [style.top.px]="slider.v" class="cursor"></div>-->

@@ -2,5 +2,5 @@
 
     }
 declare module 'color-convert' {
-    export class rgb: Rgb;
+    //export class rgb: Rgb;
 }
