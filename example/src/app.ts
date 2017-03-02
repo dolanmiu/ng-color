@@ -22,7 +22,6 @@ export class App {
     }
 
     colorChange(color: ColorOutput) {
-        console.log(color);
         this.color = color;
     }
 

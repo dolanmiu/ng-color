@@ -37,18 +37,22 @@ export class SaturationLightnessComponent implements ControlValueAccessor {
             x: 0,
             y: 0,
         }
-        this.lightness = 0;
-        this.saturation = 0;
     }
 
     public setSaturationLightness(mouseEvent: MouseHandlerOutput): void {
         this.cursorPosition.x = mouseEvent.realWorld.x;
         this.cursorPosition.y = mouseEvent.realWorld.y;
 
-        this.value = {
+        const yScaleFactor = 1 / (mouseEvent.s + 1);
+
+        const value = {
             saturation: mouseEvent.s,
-            lightness: mouseEvent.v
+            lightness: mouseEvent.v * yScaleFactor,
         };
+
+        this.value = value;
+
+        console.log(value);
     }
 
     public hsl(): SafeStyle {
@@ -67,8 +71,8 @@ export class SaturationLightnessComponent implements ControlValueAccessor {
     //get accessor
     get value(): SaturationLightness {
         return {
-            saturation: this.saturation,
-            lightness: this.lightness,
+            saturation: this.saturation | 0,
+            lightness: this.lightness | 0,
         }
     };
 

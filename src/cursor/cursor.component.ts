@@ -21,6 +21,7 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 export class CursorComponent {
     @Input() public position: Vector;
     @Input() public bothAxis: boolean;
+    @Input() public lightness: number;
 
     constructor(private sanitizer: DomSanitizer) {
         this.position = {
