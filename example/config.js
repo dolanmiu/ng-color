@@ -32,6 +32,9 @@ System.config({
 
     'ionic-angular': 'npm:ionic-angular/index.js',
 
+    'color-name': 'npm:color-name',
+    'color-convert': 'npm:color-convert/conversions.js',
+
     'rxjs': 'npm:rxjs',
     'typescript': 'npm:typescript@2.0.2/lib/typescript.js'
   },

@@ -110,7 +110,7 @@ export class IonicColorPickerSlider implements ControlValueAccessor {
         if (v === undefined || v === null) {
             return;
         }
-        console.log(v);
+
         if (v.red === undefined) {
             v.red = parseInt(this.red);
         }

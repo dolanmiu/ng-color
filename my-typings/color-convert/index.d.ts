@@ -1,6 +1,13 @@
-    declare class Rgb {
+declare class Rgb {
 
-    }
+}
 declare module 'color-convert' {
-    //export class rgb: Rgb;
+    export class rgb {
+        static hex: any;
+    }
+
+    export class hsl {
+        static rgb: any;
+        static hex: any;
+    }
 }
