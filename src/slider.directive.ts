@@ -35,6 +35,7 @@ export class SliderDirective {
         } else {
             this.newValue.emit({ v: x / width, rg: this.rgX });
         }
+        console.log(x);
     }
 
     move(event: any) {
@@ -44,6 +45,7 @@ export class SliderDirective {
 
     start(event: any) {
         this.setCursor(event);
+        console.log('starting');
         document.addEventListener('mousemove', this.listenerMove);
         document.addEventListener('touchmove', this.listenerMove);
         document.addEventListener('mouseup', this.listenerStop);
@@ -51,6 +53,7 @@ export class SliderDirective {
     }
 
     stop() {
+                console.log('stopping');
         document.removeEventListener('mousemove', this.listenerMove);
         document.removeEventListener('touchmove', this.listenerMove);
         document.removeEventListener('mouseup', this.listenerStop);

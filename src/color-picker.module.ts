@@ -8,8 +8,11 @@ import { SampleService } from './sample.service';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { FormsModule } from '@angular/forms';
 import { ColorPickerService } from './color-picker.service';
-import { ColorPickerDirective, DialogComponent, TextDirective, SliderDirective } from './color-picker.directive';
+import { SliderDirective } from './slider.directive';
+import { ColorPickerDirective, DialogComponent, TextDirective } from './color-picker.directive';
 import { SaturationLightnessComponent } from './saturation-lightness-box/saturation-lightness-box.component';
+import { HueComponent } from './hue/hue.component';
+import { CursorComponent } from './cursor/cursor.component';
 
 @NgModule({
   imports: [
@@ -20,11 +23,13 @@ import { SaturationLightnessComponent } from './saturation-lightness-box/saturat
   declarations: [
     //IonicColorPickerSlider,
     IonicColorPicker,
-    //SliderDirective,
+    SliderDirective,
     //TextDirective
     ColorPickerDirective,
     DialogComponent, TextDirective, SliderDirective,
-    SaturationLightnessComponent
+    SaturationLightnessComponent,
+    HueComponent,
+    CursorComponent
   ],
   bootstrap: [IonicApp],
   exports: [

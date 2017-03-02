@@ -1,35 +1,36 @@
 import { Component, Input, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import { IMAGE } from './saturation-lightness-image';
+import { IMAGE } from './hue-image';
 
 @Component({
-    selector: 'saturation-lightness-box',
+    selector: 'hue',
     template: `
-        <div class="saturation-lightness blue">
+        <div [slider] [rgX]="1" class="hue">
             <cursor></cursor>
         </div>
     `,
     styles: [`
-        .saturation-lightness {
+        .hue {
             cursor: pointer;
             width: 100%;
-            height: 130px;
+            height: 16px;
             border:none;
+            margin-bottom: 16px;
             background-size: 100% 100%;
             background-image: url(${IMAGE});
-        }
-
-        .blue {
-            background-color: blue;
         }
     `],
     providers: [{
         provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => SaturationLightnessComponent),
+        useExisting: forwardRef(() => HueComponent),
         multi: true
     }]
 })
-export class SaturationLightnessComponent {
+export class HueComponent {
 
     @Input() selectedHue: string;
+
+    public start() {
+
+    }
 }
