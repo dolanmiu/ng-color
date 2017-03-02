@@ -1,8 +1,11 @@
+declare interface RGB {
+    red: number;
+    green: number;
+    blue: number;
+}
+
 declare interface ColorOutput {
-    rgb: {
-        red: number,
-        green: number,
-        blue: number,
-    },
-    hex: string;
+    rgb: RGB;
+    hex: number;
+    hexString: string;
 }

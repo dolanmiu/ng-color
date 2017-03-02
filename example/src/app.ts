@@ -6,19 +6,23 @@ import { SampleModule } from './color-picker/color-picker.module';
     selector: 'my-app',
     template: `
     <div>
-      <h2>Hello {{name}}</h2>
-             <ionic-color-picker (colorChange)="colorChange($event)" style.height="200px"></ionic-color-picker>
+        <h2>Hello {{name}}</h2>
+        <ionic-color-picker (colorChange)="colorChange($event)" style.height.px="200"></ionic-color-picker>
+        {{color | json}}
     </div>
   `,
 })
 export class App {
-    name: string;
+    public name: string;
+    public color: ColorOutput;
+
     constructor() {
         this.name = 'Angular2'
     }
 
-    colorChange(color: any) {
+    colorChange(color: ColorOutput) {
         console.log(color);
+        this.color = color;
     }
 }
 
