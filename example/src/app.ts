@@ -8,6 +8,7 @@ import { SampleModule } from './color-picker/color-picker.module';
     <div>
         <h2>Hello {{name}}</h2>
         <ionic-color-picker (colorChange)="colorChange($event)" style.height.px="200"></ionic-color-picker>
+        <div [style.background-color]="hexColor">Output Color: {{hexColor}}</div>
         {{color | json}}
     </div>
   `,
@@ -23,6 +24,13 @@ export class App {
     colorChange(color: ColorOutput) {
         console.log(color);
         this.color = color;
+    }
+
+    public get hexColor() {
+        if (this.color === undefined) {
+            return '#FFFFFF';
+        }
+        return this.color.hexString;
     }
 }
 

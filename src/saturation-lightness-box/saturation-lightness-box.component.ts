@@ -7,7 +7,7 @@ import { IMAGE } from './saturation-lightness-image';
     selector: 'saturation-lightness-box',
     template: `
         <div [slider] [rgX]="1" [rgY]="1" (newValue)="setSaturationLightness($event)" class="saturation-lightness" [style]="hsl()">
-            <cursor [position]="cursorPosition" class="cursor"></cursor>
+            <cursor [position]="cursorPosition" bothAxis="true"></cursor>
         </div>
     `,
     styles: [`
@@ -18,11 +18,6 @@ import { IMAGE } from './saturation-lightness-image';
             border: none;
             background-size: 100% 100%;
             background-image: url(${IMAGE});
-        }
-
-        .cursor {
-            -webkit-transform: translateY(-8px); /* Safari */
-            transform: translateY(-8px);
         }
     `],
     providers: [{

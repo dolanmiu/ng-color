@@ -1,10 +1,11 @@
 import { Component, Input, forwardRef, ElementRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 @Component({
     selector: 'cursor',
     template: `
-        <div class="cursor" [style.left.px]="position.x" [style.top.px]="position.y"></div>
+        <div class="cursor" [style]="calcTransform()"></div>
     `,
     styles: [`
         .cursor {
@@ -14,23 +15,27 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
             width: 16px;
             height: 16px;
             border: #222 solid 2px;
-            -webkit-transform: translateX(-8px); /* Safari */
-            transform: translateX(-8px);
         }
     `],
-    providers: [{
-        provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => CursorComponent),
-        multi: true
-    }]
 })
 export class CursorComponent {
     @Input() public position: Vector;
+    @Input() public bothAxis: boolean;
 
-    constructor() {
+    constructor(private sanitizer: DomSanitizer) {
         this.position = {
             x: 0,
             y: 0,
         }
+        this.bothAxis = false;
+    }
+
+    public calcTransform(): SafeStyle {
+        let offset = 0;
+
+        if(this.bothAxis) {
+            offset = -8;
+        }
+        return this.sanitizer.bypassSecurityTrustStyle(`left: ${this.position.x}px; top: ${this.position.y}px; transform: translate(-8px, ${offset}px);`);
     }
 }
