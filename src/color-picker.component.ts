@@ -9,7 +9,7 @@ import { Colors } from './sample.component';
     template: `
         <div class="ionic-color-picker">
             <saturation-lightness-box></saturation-lightness-box>
-            <hue></hue>
+            <hue [(ngModel)]="ffg"></hue>{{ffg}}
             <!--<div class="arrow arrow-{{cpPosition}}" [style.top.px]="arrowTop"></div>-->
 
             <div class="saturation-lightness">

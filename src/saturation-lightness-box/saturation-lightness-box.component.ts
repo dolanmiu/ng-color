@@ -5,8 +5,8 @@ import { IMAGE } from './saturation-lightness-image';
 @Component({
     selector: 'saturation-lightness-box',
     template: `
-        <div class="saturation-lightness blue">
-            <cursor></cursor>
+        <div [slider] [rgX]="1" [rgY]="1" (newValue)="setSaturationLightness($event)" class="saturation-lightness blue">
+            <cursor [position]="cursorPosition" class="cursor"></cursor>
         </div>
     `,
     styles: [`
@@ -22,6 +22,11 @@ import { IMAGE } from './saturation-lightness-image';
         .blue {
             background-color: blue;
         }
+
+        .cursor {
+            -webkit-transform: translateY(-8px); /* Safari */
+            transform: translateY(-8px);
+        }
     `],
     providers: [{
         provide: NG_VALUE_ACCESSOR,
@@ -30,6 +35,19 @@ import { IMAGE } from './saturation-lightness-image';
     }]
 })
 export class SaturationLightnessComponent {
+    public cursorPosition: Vector;
+    @Input() public selectedHue: string;
 
-    @Input() selectedHue: string;
+    constructor() {
+        this.cursorPosition = {
+            x: 0,
+            y: 0,
+        }
+    }
+
+    public setSaturationLightness(mouseEvent: MouseHandlerOutput): void {
+        console.log(mouseEvent);
+        this.cursorPosition.x = mouseEvent.realWorld.x;
+        this.cursorPosition.y = mouseEvent.realWorld.y;
+    }
 }

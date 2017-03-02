@@ -8,7 +8,7 @@ import { SampleService } from './sample.service';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { FormsModule } from '@angular/forms';
 import { ColorPickerService } from './color-picker.service';
-import { SliderDirective } from './slider.directive';
+import { MouseHandlerDirective } from './mouse-handler.directive';
 import { ColorPickerDirective, DialogComponent, TextDirective } from './color-picker.directive';
 import { SaturationLightnessComponent } from './saturation-lightness-box/saturation-lightness-box.component';
 import { HueComponent } from './hue/hue.component';
@@ -23,10 +23,10 @@ import { CursorComponent } from './cursor/cursor.component';
   declarations: [
     //IonicColorPickerSlider,
     IonicColorPicker,
-    SliderDirective,
+    MouseHandlerDirective,
     //TextDirective
     ColorPickerDirective,
-    DialogComponent, TextDirective, SliderDirective,
+    DialogComponent, TextDirective,
     SaturationLightnessComponent,
     HueComponent,
     CursorComponent
@@ -35,7 +35,7 @@ import { CursorComponent } from './cursor/cursor.component';
   exports: [
     IonicColorPicker,
     ColorPickerDirective,
-    DialogComponent, TextDirective, SliderDirective
+    DialogComponent, TextDirective
   ],
   providers: [
     ColorPickerService
