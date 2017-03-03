@@ -1,7 +1,6 @@
 import { Component, Input, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-var convert = require('color-convert');
-//import * as convert from 'color-convert';
+import * as convert from 'color-convert';
 
 export interface Colors {
     red: number;

@@ -1,7 +1,6 @@
 import { Component, Output, forwardRef, EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import * as convert from 'color-convert';
-import { Colors } from './sample.component';
 
 @Component({
     selector: 'ionic-color-picker',
@@ -28,6 +27,7 @@ export class IonicColorPicker {
             lightness: 0,
         }
         this.colorChange = new EventEmitter<ColorOutput>();
+        this.hue = 0;
     }
 
     public calculateColor(): void {
