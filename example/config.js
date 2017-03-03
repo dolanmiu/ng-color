@@ -30,8 +30,6 @@ System.config({
     '@angular/http/testing': 'npm:@angular/http/bundles/http-testing.umd.js',
     '@angular/router/testing': 'npm:@angular/router/bundles/router-testing.umd.js',
 
-    'ionic-angular': 'npm:ionic-angular/index.js',
-
     'color-name': 'npm:color-name',
     'color-convert': 'npm:color-convert/conversions.js',
 
