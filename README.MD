@@ -1,22 +1,19 @@
-# ionic-2-color-picker
+# ng-color
+> A simple embeddable color picker component for Angular2 following best Angular2 practices, and good coding standards for easy use and easy contribution.
+
+---
 
 ## Installation
 
 To install this library, run:
 
 ```bash
-$ npm install ionic-2-color-picker --save
+$ npm install ng-color --save
 ```
 
 ## Consuming your library
 
-Once you have published your library to npm, you can import your library in any Angular application by running:
-
-```bash
-$ npm install ionic-2-color-picker
-```
-
-and then from your Angular `AppModule`:
+To Use this library in your `AppModule`:
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,7 +22,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { SampleModule } from 'ionic-2-color-picker';
+import { NgColorModule } from 'ng-color';
 
 @NgModule({
   declarations: [
@@ -33,9 +30,7 @@ import { SampleModule } from 'ionic-2-color-picker';
   ],
   imports: [
     BrowserModule,
-
-    // Specify your library as an import
-    LibraryModule
+    NgColorModule // Specify your library as an import
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -43,15 +38,17 @@ import { SampleModule } from 'ionic-2-color-picker';
 export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Once your library is imported, you can use the component in your Angular application:
 
-```xml
+```html
 <!-- You can now use your library component in app.component.html -->
 <h1>
   {{title}}
 </h1>
-<sampleComponent></sampleComponent>
+<ng-color (color)="colorEvent($event)"></ng-color>
 ```
+
+It has a `color` output, which as you know, fires an event when a new color is selected.
 
 ## Development
 
