@@ -10,7 +10,7 @@ export interface Colors {
 }
 
 @Component({
-    selector: 'ionic-color-picker-slider',
+    selector: 'color-picker-slider',
     template: `
         <ion-list>
             <ion-item>

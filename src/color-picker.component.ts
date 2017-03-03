@@ -3,20 +3,20 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import * as convert from 'color-convert';
 
 @Component({
-    selector: 'ionic-color-picker',
+    selector: 'ng-color',
     template: `
-        <div class="ionic-color-picker">
+        <div>
             <saturation-lightness-box [hue]="hue" [(ngModel)]="saturationLightness" (ngModelChange)="calculateColor()"></saturation-lightness-box>
             <hue [(ngModel)]="hue" (ngModelChange)="calculateColor()"></hue>
         </div>
   `,
     providers: [{
         provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => IonicColorPicker),
+        useExisting: forwardRef(() => ColorPicker),
         multi: true
     }]
 })
-export class IonicColorPicker {
+export class ColorPicker {
     public saturationLightness: SaturationLightness;
     public hue: number;
     @Output() private colorChange: EventEmitter<ColorOutput>;

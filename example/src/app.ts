@@ -7,7 +7,7 @@ import { NgColorModule } from './color-picker/color-picker.module';
     template: `
     <div>
         <h2>Hello {{name}}</h2>
-        <ionic-color-picker (colorChange)="colorChange($event)" style.height.px="200"></ionic-color-picker>
+        <ng-color (colorChange)="colorChange($event)"></ng-color>
         <div [style.background-color]="hexColor">Output Color: {{hexColor}}</div>
         {{color | json}}
     </div>

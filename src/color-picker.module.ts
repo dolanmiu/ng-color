@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicColorPicker } from './color-picker.component';
+import { ColorPicker } from './color-picker.component';
 import { FormsModule } from '@angular/forms';
 import { MouseHandlerDirective } from './mouse-handler.directive';
 import { SaturationLightnessComponent } from './saturation-lightness-box/saturation-lightness-box.component';
@@ -13,14 +13,14 @@ import { CursorComponent } from './cursor/cursor.component';
         FormsModule
     ],
     declarations: [
-        IonicColorPicker,
+        ColorPicker,
         MouseHandlerDirective,
         SaturationLightnessComponent,
         HueComponent,
         CursorComponent
     ],
     exports: [
-        IonicColorPicker
+        ColorPicker
     ],
     providers: [
     ]
