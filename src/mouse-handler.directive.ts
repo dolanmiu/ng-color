@@ -3,7 +3,7 @@ import { NgModule, Compiler, ReflectiveInjector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 @Directive({
-    selector: '[slider]',
+    selector: '[mouse-handler]',
     host: {
         '(mousedown)': 'start($event)',
         '(touchstart)': 'start($event)'
@@ -11,7 +11,7 @@ import { BrowserModule } from '@angular/platform-browser';
 })
 export class MouseHandlerDirective {
     @Output('newValue') newValue = new EventEmitter<MouseHandlerOutput>();
-    @Input('slider') slider: string;
+    @Input('mouse-handler') slider: string;
     @Input('rgX') rgX: number;
     @Input('rgY') rgY: number;
     private listenerMove: any;

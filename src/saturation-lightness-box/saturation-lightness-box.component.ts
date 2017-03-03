@@ -6,7 +6,7 @@ import { IMAGE } from './saturation-lightness-image';
 @Component({
     selector: 'saturation-lightness-box',
     template: `
-        <div [slider] [rgX]="1" [rgY]="1" (newValue)="setSaturationLightness($event)" class="saturation-lightness" [style]="hsl()">
+        <div [mouse-handler] [rgX]="1" [rgY]="1" (newValue)="setSaturationLightness($event)" class="saturation-lightness" [style]="hsl()">
             <cursor [position]="cursorPosition" bothAxis="true"></cursor>
         </div>
     `,

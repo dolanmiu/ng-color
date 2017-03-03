@@ -5,7 +5,7 @@ import { IMAGE } from './hue-image';
 @Component({
     selector: 'hue',
     template: `
-        <div [slider] [rgX]="1" (newValue)="setHue($event)" class="hue">
+        <div [mouse-handler] [rgX]="1" (newValue)="setHue($event)" class="hue">
             <cursor [position]="cursorPosition"></cursor>
         </div>
     `,
