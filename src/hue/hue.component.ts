@@ -13,9 +13,9 @@ import { IMAGE } from './hue-image';
         .hue {
             cursor: pointer;
             width: 100%;
-            height: 16px;
+            height: 20px;
             border:none;
-            margin-bottom: 16px;
+            margin: 16px 0;
             background-size: 100% 100%;
             background-image: url(${IMAGE});
         }

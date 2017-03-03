@@ -23,8 +23,8 @@ export class IonicColorPicker {
 
     constructor() {
         this.saturationLightness = {
-            saturation: 0,
-            lightness: 0,
+            saturation: 1,
+            lightness: 1,
         }
         this.colorChange = new EventEmitter<ColorOutput>();
         this.hue = 0;
