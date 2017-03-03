@@ -58,7 +58,7 @@ Once your library is imported, you can use the component in your Angular applica
 <ng-color (colorChange)="colorChange($event)"></ng-color>
 ```
 
-It has a `color` output, which as you know, fires an event when a new color is selected.
+It has a `colorChange` output, which as you know, fires an event when a new color is selected. The event contains the selected color.
 
 ## Development
 
