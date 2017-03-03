@@ -1,3 +1,3 @@
-import { SampleModule } from './color-picker.module';
+import { NgColorModule } from './color-picker.module';
 
-export { SampleModule }
+export { NgColorModule }

@@ -25,10 +25,10 @@ import { CursorComponent } from './cursor/cursor.component';
     providers: [
     ]
 })
-export class SampleModule {
+export class NgColorModule {
     static forRoot(): ModuleWithProviders {
         return {
-            ngModule: SampleModule,
+            ngModule: NgColorModule,
             providers: []
         };
     }

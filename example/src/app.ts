@@ -1,7 +1,7 @@
 //our root app component
 import { Component, NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
-import { SampleModule } from './color-picker/color-picker.module';
+import { NgColorModule } from './color-picker/color-picker.module';
 @Component({
     selector: 'my-app',
     template: `
@@ -34,7 +34,7 @@ export class App {
 }
 
 @NgModule({
-    imports: [BrowserModule, SampleModule],
+    imports: [BrowserModule, NgColorModule],
     declarations: [App],
     bootstrap: [App]
 })

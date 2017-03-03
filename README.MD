@@ -11,7 +11,7 @@ To install this library, run:
 $ npm install ng-color --save
 ```
 
-## Consuming your library
+## How to use
 
 To Use this library in your `AppModule`:
 
