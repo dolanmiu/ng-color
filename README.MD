@@ -77,3 +77,5 @@ $ npm run lint
 ## License
 
 MIT © [Dolan Miu](mailto:dolan_miu@hotmail.com)
+
+Made with ♥ by Dolan Miu 🍆
