@@ -28,7 +28,6 @@
   "dependencies": {
     "@angular/forms": "^2.4.8",
     "color-convert": "^1.9.0",
-    "ionic-angular": "^2.1.0",
     "rimraf": "^2.6.1"
   },
   "devDependencies": {
