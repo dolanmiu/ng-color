@@ -51,8 +51,6 @@ export class SaturationLightnessComponent implements ControlValueAccessor {
         };
 
         this.value = value;
-
-        console.log(value);
     }
 
     public hsl(): SafeStyle {

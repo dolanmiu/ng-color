@@ -2,7 +2,6 @@ import { Component, Output, forwardRef, EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import * as convert from 'color-convert';
 import { Colors } from './sample.component';
-import { ColorPickerService } from './color-picker.service';
 
 @Component({
     selector: 'ionic-color-picker',
@@ -23,7 +22,7 @@ export class IonicColorPicker {
     public hue: number;
     @Output() private colorChange: EventEmitter<ColorOutput>;
 
-    constructor(private colorService: ColorPickerService) {
+    constructor() {
         this.saturationLightness = {
             saturation: 0,
             lightness: 0,
