@@ -35,8 +35,8 @@ export class CursorComponent {
         let offset = 0;
 
         if(this.bothAxis) {
-            offset = -8;
+            offset = -10;
         }
-        return this.sanitizer.bypassSecurityTrustStyle(`left: ${this.position.x}px; top: ${this.position.y}px; transform: translate(-8px, ${offset}px);`);
+        return this.sanitizer.bypassSecurityTrustStyle(`left: ${this.position.x}px; top: ${this.position.y}px; transform: translate(-10px, ${offset}px);`);
     }
 }
