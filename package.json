@@ -1,12 +1,12 @@
 {
-  "name": "ionic-2-color-picker",
+  "name": "ng-color",
   "version": "0.1.0",
   "scripts": {
     "build": "ngc -p tsconfig.json",
     "lint": "tslint src/**/*.ts",
     "test": "tsc && karma start",
     "prepublish": "tsc",
-    "tsc": "tsc",
+    "tsc": "rimraf dist && tsc",
     "start": "http-server example"
   },
   "repository": {
@@ -28,7 +28,8 @@
   "dependencies": {
     "@angular/forms": "^2.4.8",
     "color-convert": "^1.9.0",
-    "ionic-angular": "^2.1.0"
+    "ionic-angular": "^2.1.0",
+    "rimraf": "^2.6.1"
   },
   "devDependencies": {
     "@angular/common": "^2.0.0",
