@@ -78,4 +78,4 @@ $ npm run lint
 
 MIT © [Dolan Miu](mailto:dolan_miu@hotmail.com)
 
-Made with ♥ by Dolan Miu 🍆
+Made with 💖 by Dolan Miu 🍆 💦 😝
