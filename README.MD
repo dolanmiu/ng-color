@@ -1,7 +1,17 @@
-# ng-color
-> A simple embeddable color picker component for Angular2 following best Angular2 practices, and good coding standards for easy use and easy contribution.
+<p align="center">
+  <a href="https://yarnpkg.com/">
+    <img alt="ng-color" src="http://i.imgur.com/Ccpv8jo.png">
+  </a>
+</p>
+
+<p align="center">
+    Simple color picker component for Angular2 
+</p>
 
 ---
+
+# ng-color
+> A simple embeddable color picker component for Angular2 following best Angular2 practices, and good coding standards for easy use and easy contribution.
 
 ## Installation
 
@@ -25,15 +35,15 @@ import { AppComponent } from './app.component';
 import { NgColorModule } from 'ng-color';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    NgColorModule // Specify your library as an import
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        NgColorModule // Specify your library as an import
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
 ```
@@ -43,9 +53,9 @@ Once your library is imported, you can use the component in your Angular applica
 ```html
 <!-- You can now use your library component in app.component.html -->
 <h1>
-  {{title}}
+    {{title}}
 </h1>
-<ng-color (color)="colorEvent($event)"></ng-color>
+<ng-color (colorChange)="colorChange($event)"></ng-color>
 ```
 
 It has a `color` output, which as you know, fires an event when a new color is selected.
