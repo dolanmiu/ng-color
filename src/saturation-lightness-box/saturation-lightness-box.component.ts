@@ -2,11 +2,12 @@ import { Component, Input, forwardRef, Output } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { IMAGE } from './saturation-lightness-image';
+import * as convert from 'color-convert';
 
 @Component({
     selector: 'saturation-lightness-box',
     template: `
-        <div [mouse-handler] [rgX]="1" [rgY]="1" (newValue)="setSaturationLightness($event)" class="saturation-lightness" [style]="hsl()">
+        <div [mouse-handler] [rgX]="1" [rgY]="1" (newValue)="setSaturationLightness($event)" class="saturation-lightness" [style.background-color]="hsl()">
             <cursor [position]="cursorPosition" bothAxis="true"></cursor>
         </div>
     `,
@@ -53,12 +54,12 @@ export class SaturationLightnessComponent implements ControlValueAccessor {
         this.value = value;
     }
 
-    public hsl(): SafeStyle {
-        let hue = this.hue;
-        if (!this.hue) {
-            hue = 0;
-        }
-        return this.sanitizer.bypassSecurityTrustStyle(`background-color: hsl(${hue * 360}, 100%, 50%);`);
+    public hsl(): string {
+        console.log(this.hue);
+        const rgbArray = convert.hsl.rgb([this.hue * 360, 100, 50]);
+        const hex = convert.rgb.hex(rgbArray);
+        console.log(hex);
+        return `#${hex}`;
     }
 
     //Placeholders for the callbacks which are later providesd
