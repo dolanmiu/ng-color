@@ -11,10 +11,10 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
             cursor: pointer;
             position: relative;
             border-radius: 50%;
-            width: 16px;
-            height: 16px;
-            border: #222 solid 2px;
+            width: 20px;
+            height: 20px;
             transform: translate(-10px, 0px);
+            box-shadow: 0px 0px 0px 2px #222 inset;
         }
 
         .offset {
