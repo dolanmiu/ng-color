@@ -7,7 +7,8 @@
     "test": "tsc && karma start",
     "prepublish": "tsc",
     "tsc": "rimraf dist && tsc",
-    "start": "http-server example"
+    "start": "http-server example",
+    "postinstall": "npm run tsc"
   },
   "repository": {
     "type": "git",
