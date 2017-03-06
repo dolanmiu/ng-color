@@ -55,10 +55,8 @@ export class SaturationLightnessComponent implements ControlValueAccessor {
     }
 
     public hsl(): string {
-        console.log(this.hue);
         const rgbArray = convert.hsl.rgb([this.hue * 360, 100, 50]);
         const hex = convert.rgb.hex(rgbArray);
-        console.log(hex);
         return `#${hex}`;
     }
 
