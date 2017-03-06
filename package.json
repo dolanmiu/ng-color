@@ -1,6 +1,7 @@
 {
   "name": "ng-color",
   "version": "1.0.0",
+  "description": "Simple Angular 2 Color Picker Component which follow NG2 best practices. No Frills.",
   "scripts": {
     "build": "ngc -p tsconfig.json",
     "lint": "tslint src/**/*.ts",
@@ -19,7 +20,17 @@
     "email": "dolan_miu@hotmail.com"
   },
   "keywords": [
-    "angular"
+    "angular",
+    "color",
+    "colour",
+    "picker",
+    "angular2",
+    "palette",
+    "hue",
+    "saturation",
+    "lightness",
+    "simple",
+    "ng"
   ],
   "license": "MIT",
   "bugs": {
