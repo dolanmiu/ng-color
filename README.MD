@@ -1,7 +1,5 @@
 <p align="center">
-  <a href="https://yarnpkg.com/">
     <img alt="ng-color" src="http://i.imgur.com/Ccpv8jo.png">
-  </a>
 </p>
 
 <p align="center">
