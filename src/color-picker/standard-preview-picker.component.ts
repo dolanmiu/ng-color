@@ -6,7 +6,7 @@ import * as convert from 'color-convert';
     selector: 'ng-color-preview',
     template: `
         <div>
-            <saturation-lightness-box [hue]="hue" [(ngModel)]="saturationLightness" (ngModelChange)="calculateColor()"></saturation-lightness-box>
+            <saturation-lightness-preview [hue]="hue" [(ngModel)]="saturationLightness" (ngModelChange)="calculateColor()"></saturation-lightness-preview>
             <div class="wrapper">
                 <hue-rounded [(ngModel)]="hue" (ngModelChange)="calculateColor()" class="bar"></hue-rounded>
                 <div class="preview-box" [style.background-color]="colorHex"></div>
