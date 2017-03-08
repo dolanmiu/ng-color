@@ -10,7 +10,7 @@ import { HueRoundedComponent } from './hue/hue-rounded.component';
 import { CursorComponent } from './cursor/cursor.component';
 import { CursorPreviewComponent } from './cursor/cursor-preview.component';
 import { ColorService } from './services/color.service';
-
+import {SaturationLightnessPreviewComponent} from './saturation-lightness-box/saturation-lightness-preview.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -24,7 +24,8 @@ import { ColorService } from './services/color.service';
         HueComponent,
         HueRoundedComponent,
         CursorComponent,
-        CursorPreviewComponent
+        CursorPreviewComponent,
+        SaturationLightnessPreviewComponent
     ],
     exports: [
         ColorPicker,
