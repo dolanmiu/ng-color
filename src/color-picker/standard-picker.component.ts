@@ -23,11 +23,11 @@ export class ColorPicker {
 
     constructor() {
         this.saturationLightness = {
-            saturation: 1,
+            saturation: 0.5,
             lightness: 1,
         }
         this.colorChange = new EventEmitter<ColorOutput>();
-        this.hue = 0;
+        this.hue = 0.5;
     }
 
     public calculateColor(): void {

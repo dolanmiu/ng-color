@@ -1,6 +1,5 @@
 import { Component, Input, forwardRef, Output } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { IMAGE } from './saturation-lightness-image';
 import * as convert from 'color-convert';
 
@@ -33,11 +32,13 @@ export class SaturationLightnessComponent implements ControlValueAccessor {
     private saturation: number
     private lightness: number;
 
-    constructor(private sanitizer: DomSanitizer) {
+    constructor() {
         this.cursorPosition = {
-            x: 0,
-            y: 0,
+            x: 0.5,
+            y: 0.5,
         }
+        this.saturation = 0.5;
+        this.lightness = 0.5;
     }
 
     public setSaturationLightness(mouseEvent: MouseHandlerOutput): void {

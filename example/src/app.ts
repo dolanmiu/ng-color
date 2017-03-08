@@ -10,6 +10,8 @@ import { NgColorModule } from './color-picker/color-picker.module';
         <ng-color (colorChange)="colorChange($event)"></ng-color>
         <div [style.background-color]="hexColor">Output Color: {{hexColor}}</div>
         {{color | json}}
+
+        <ng-color-preview></ng-color-preview>
     </div>
   `,
 })
