@@ -1,16 +1,13 @@
-import { Component, Input, forwardRef } from '@angular/core';
+import { Component, Input, forwardRef, ElementRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { IMAGE } from './hue-image';
 
-@Component({
-
-})
 export class HueBase implements ControlValueAccessor {
 
     @Input() selectedHue: number;
     public cursorPosition: Vector;
 
-    constructor() {
+    constructor(private el: ElementRef) {
         this.cursorPosition = {
             x: 0,
             y: 0,
@@ -38,7 +35,6 @@ export class HueBase implements ControlValueAccessor {
     //set accessor including call the onchange callback
     set value(v: number) {
         this.selectedHue = v;
-        //this.cursorPosition.x = 400;
         this.onChangeCallback(v);
     }
 
@@ -47,6 +43,7 @@ export class HueBase implements ControlValueAccessor {
         if (v === undefined || v === null) {
             return;
         }
+        this.cursorPosition.x = v * this.el.nativeElement.offsetWidth;
         this.selectedHue = v;
     }
 

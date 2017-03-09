@@ -1,7 +1,7 @@
-import { Component, Input, forwardRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { Component, forwardRef, ElementRef } from '@angular/core';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IMAGE } from './hue-image';
-import { HueBase } from './hue-base.component';
+import { HueBase } from './hue-base';
 
 @Component({
     selector: 'hue',
@@ -11,6 +11,12 @@ import { HueBase } from './hue-base.component';
         </div>
     `,
     styles: [`
+        :host {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
         .hue {
             cursor: pointer;
             width: 100%;
@@ -28,5 +34,7 @@ import { HueBase } from './hue-base.component';
     }]
 })
 export class HueComponent extends HueBase {
-
+    constructor(el: ElementRef) {
+        super(el);
+    }
 }

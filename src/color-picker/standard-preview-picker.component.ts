@@ -1,16 +1,15 @@
-import { Component, Output, forwardRef, EventEmitter } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { Component, forwardRef } from '@angular/core';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import * as convert from 'color-convert';
+import { ColorPickerBaseComponent } from './color-picker-base';
 
 @Component({
     selector: 'ng-color-preview',
     template: `
-        <div>
-            <saturation-lightness-preview [hue]="hue" [(ngModel)]="saturationLightness" (ngModelChange)="calculateColor()"></saturation-lightness-preview>
-            <div class="wrapper">
-                <hue-rounded [(ngModel)]="hue" (ngModelChange)="calculateColor()" class="bar"></hue-rounded>
-                <div class="preview-box" [style.background-color]="colorHex"></div>
-            </div>
+        <saturation-lightness-preview [hue]="hue" [(ngModel)]="saturationLightness" (ngModelChange)="calculateColor()"></saturation-lightness-preview>
+        <div class="wrapper">
+            <hue-rounded [(ngModel)]="hue" (ngModelChange)="calculateColor()" class="bar"></hue-rounded>
+            <div class="preview-box" [style.background-color]="currentColor?.hexString"></div>
         </div>
   `,
     styles: [`
@@ -40,36 +39,6 @@ import * as convert from 'color-convert';
         multi: true
     }]
 })
-export class ColorPreviewPicker {
-    public saturationLightness: SaturationLightness;
-    public hue: number;
-    public colorHex: string;
-    @Output() private colorChange: EventEmitter<ColorOutput>;
+export class ColorPreviewPicker extends ColorPickerBaseComponent {
 
-    constructor() {
-        this.saturationLightness = {
-            saturation: 0.5,
-            lightness: 1,
-        }
-        this.colorChange = new EventEmitter<ColorOutput>();
-        this.hue = 0.5;
-    }
-
-    public calculateColor(): void {
-        const rgbArray = convert.hsl.rgb([this.hue * 360, this.saturationLightness.saturation * 100, this.saturationLightness.lightness * 100]);
-        const rgb: RGB = {
-            red: parseInt(rgbArray[0], 10),
-            green: parseInt(rgbArray[1], 10),
-            blue: parseInt(rgbArray[2], 10),
-        }
-        const hex = convert.rgb.hex(rgbArray);
-        let colorValue = {
-            rgb: rgb,
-            hexString: `#${hex}`,
-            hex: parseInt(`0x${hex}`, 16),
-        }
-
-        this.colorHex = colorValue.hexString;
-        this.colorChange.emit(colorValue);
-    }
 }

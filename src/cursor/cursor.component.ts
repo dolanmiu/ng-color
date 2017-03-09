@@ -4,7 +4,7 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 @Component({
     selector: 'cursor',
     template: `
-        <div class="cursor" [style.left.px]="position.x" [style.top.px]="position.y" [ngClass]="{'offset': bothAxis}"></div>
+        <div class="cursor" [style.left.px]="position?.x" [style.top.px]="position?.y" [ngClass]="{'offset': bothAxis}"></div>
     `,
     styles: [`
         .cursor {
@@ -28,10 +28,6 @@ export class CursorComponent {
     @Input() public lightness: number;
 
     constructor(private sanitizer: DomSanitizer) {
-        this.position = {
-            x: 0,
-            y: 0,
-        }
         this.bothAxis = false;
     }
 }

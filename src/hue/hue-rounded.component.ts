@@ -1,7 +1,7 @@
-import { Component, Input, forwardRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { Component, forwardRef, ElementRef } from '@angular/core';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IMAGE } from './hue-image';
-import { HueBase } from './hue-base.component';
+import { HueBase } from './hue-base';
 import { ColorService } from '../services/color.service';
 
 @Component({
@@ -37,13 +37,18 @@ import { ColorService } from '../services/color.service';
 export class HueRoundedComponent extends HueBase {
     private color: string;
 
-    constructor(private colorService: ColorService) {
-        super();
-        this.color = "#FF0000";
+    constructor(private colorService: ColorService, el: ElementRef) {
+        super(el);
     }
 
     public setHue(mouseEvent: MouseHandlerOutput) {
         super.setHue(mouseEvent);
+        this.color = this.colorService.hueToColor(this.value);
+    }
+
+    //From ControlValueAccessor interface
+    public writeValue(v: number): void {
+        super.writeValue(v);
         this.color = this.colorService.hueToColor(this.value);
     }
 }

@@ -4,7 +4,7 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 @Component({
     selector: 'cursor-preview',
     template: `
-        <div class="cursor" [style.left.px]="position.x" [style.top.px]="position.y - 6" [ngClass]="{'offset': bothAxis}" [style.background-color]="color"></div>
+        <div class="cursor" [style.left.px]="position?.x" [style.top.px]="position?.y - 6" [ngClass]="{'offset': bothAxis}" [style.background-color]="color"></div>
     `,
     styles: [`
         .cursor {
@@ -29,10 +29,6 @@ export class CursorPreviewComponent {
     @Input() public color: string;
 
     constructor(private sanitizer: DomSanitizer) {
-        this.position = {
-            x: 0,
-            y: 0,
-        }
         this.bothAxis = false;
     }
 }
