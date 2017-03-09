@@ -1,12 +1,12 @@
 {
   "name": "ng-color",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Simple Angular 2 Color Picker Component which follow NG2 best practices. No Frills.",
   "scripts": {
     "build": "ngc -p tsconfig.json",
     "lint": "tslint src/**/*.ts",
     "test": "tsc && karma start",
-    "prepublish": "tsc",
+    "prepublishOnly": "tsc",
     "tsc": "rimraf dist && tsc",
     "start": "http-server example",
     "postinstall": "npm run tsc"
@@ -38,11 +38,11 @@
   },
   "main": "./dist/index.js",
   "dependencies": {
-    "@angular/forms": "^2.4.8",
     "color-convert": "^1.9.0",
     "rimraf": "^2.6.1"
   },
   "devDependencies": {
+    "@angular/forms": "^2.4.5",
     "@angular/platform-browser": "^2.4.5",
     "@angular/common": "^2.0.0",
     "@angular/compiler": "^2.4.5",
