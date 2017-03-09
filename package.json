@@ -1,6 +1,6 @@
 {
   "name": "ng-color",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Simple Angular 2 Color Picker Component which follow NG2 best practices. No Frills.",
   "scripts": {
     "build": "ngc -p tsconfig.json",
