@@ -4,7 +4,7 @@ import * as convert from 'color-convert';
 import { ColorPickerBaseComponent } from './color-picker-base';
 
 @Component({
-    selector: 'ng-color-preview',
+    selector: 'ng-color-basic-preview',
     template: `
         <saturation-lightness-preview [hue]="hue" [(ngModel)]="saturationLightness" (ngModelChange)="calculateColor()"></saturation-lightness-preview>
         <div class="wrapper">
