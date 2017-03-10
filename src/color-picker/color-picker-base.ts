@@ -20,14 +20,18 @@ export class ColorPickerBaseComponent implements ControlValueAccessor, OnInit {
     }
 
     public ngOnInit(): void {
+        let hsl;
         if (this.startHex !== undefined) {
-            const hsl = this.calculateHslFromHex(this.startHex);
-            this.hue = hsl.hue;
-            this.saturationLightness = {
-                saturation: hsl.saturation,
-                lightness: hsl.lightness
-            };
+            hsl = this.calculateHslFromHex(this.startHex);
+        } else {
+            hsl = this.calculateHslFromHex('ff0000');
         }
+        this.hue = hsl.hue;
+        this.saturationLightness = {
+            saturation: hsl.saturation,
+            lightness: hsl.lightness
+        };
+        this.colorChange.emit(this.currentColor);
     }
 
     public calculateColor() {

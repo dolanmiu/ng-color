@@ -10,13 +10,18 @@ import { NgColorModule } from './color-picker/color-picker.module';
         <h1>Hello {{name}}</h1>
         <h2>Style 1</h2>
         <h3>ng-color-basic</h3>
+        <h4>Using startHex</h4>
         <ng-color-basic (colorChange)="colorChange($event)" [(ngModel)]="dench" startHex="DEADBF"></ng-color-basic>
         <div [style.background-color]="hexColor">Output Color: {{hexColor}}</div>
         {{color | json}}
         {{dench | json}}
 
+        <h4>Not using startHex</h4>
+        <ng-color-basic></ng-color-basic>
+
         <h2>Style 2</h2>
         <h3>ng-color-basic-preview</h3>
+        <h4>Using startHex</h4>
         <ng-color-basic-preview (colorChange)="colorChange2($event)" [(ngModel)]="dench2" startHex="23bf26"></ng-color-basic-preview>
         {{color2 | json}}
         {{dench2 | json}}
