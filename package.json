@@ -1,6 +1,6 @@
 {
   "name": "ng-color",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Simple Angular 2 Color Picker Component which follow NG2 best practices. No Frills.",
   "scripts": {
     "build": "ngc -p tsconfig.json",
@@ -8,8 +8,7 @@
     "test": "tsc && karma start",
     "prepublishOnly": "tsc",
     "tsc": "rimraf dist && tsc",
-    "start": "http-server example",
-    "postinstall": "npm run tsc"
+    "start": "http-server example"
   },
   "repository": {
     "type": "git",
