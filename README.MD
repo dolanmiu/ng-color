@@ -57,7 +57,13 @@ Once your library is imported, you can use the component in your Angular applica
 <h1>
     {{title}}
 </h1>
-<ng-color (colorChange)="colorChange($event)"></ng-color>
+<ng-color-basic (colorChange)="colorChange($event)"></ng-color-basic>
+```
+
+or:
+
+```html
+<ng-color-basic-preview (colorChange)="colorChange($event)"></ng-color-basic-preview>
 ```
 
 It has a `colorChange` output, which as you know, fires an event when a new color is selected. The event contains the selected color.
