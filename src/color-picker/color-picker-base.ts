@@ -1,5 +1,5 @@
-import { Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
 import * as convert from 'color-convert';
 
 export class ColorPickerBaseComponent implements ControlValueAccessor, OnInit {
@@ -7,6 +7,8 @@ export class ColorPickerBaseComponent implements ControlValueAccessor, OnInit {
     public hue: number;
     @Output() public colorChange: EventEmitter<ColorOutput>;
     @Input() public startHex: string;
+    private onTouchedCallback: () => void;
+    private onChangeCallback: (_: ColorOutput) => void;
 
     constructor() {
         this.saturationLightness = {
@@ -29,57 +31,47 @@ export class ColorPickerBaseComponent implements ControlValueAccessor, OnInit {
         this.hue = hsl.hue;
         this.saturationLightness = {
             saturation: hsl.saturation,
-            lightness: hsl.lightness
+            lightness: hsl.lightness,
         };
         this.colorChange.emit(this.currentColor);
     }
 
-    public calculateColor() {
+    public calculateColor(): void {
         const colorOutput = this.createColorOutput(this.hue * 360, this.saturationLightness.saturation * 100, this.saturationLightness.lightness * 100);
 
         this.colorChange.emit(colorOutput);
         this.value = colorOutput;
     }
 
-    //Placeholders for the callbacks which are later providesd
-    //by the Control Value Accessor
-    private onTouchedCallback: () => void;
-    private onChangeCallback: (_: ColorOutput) => void;
-
-    //get accessor
     get value(): ColorOutput {
         return this.currentColor;
-    };
+    }
 
-    //set accessor including call the onchange callback
     set value(v: ColorOutput) {
         this.onChangeCallback(v);
     }
 
-    //From ControlValueAccessor interface
-    writeValue(v: any) {
+    public writeValue(v: any): void {
         if (v === undefined || v === null) {
             return;
         }
     }
 
-    //From ControlValueAccessor interface
-    registerOnChange(fn: any) {
+    public registerOnChange(fn: any): void {
         this.onChangeCallback = fn;
     }
 
-    //From ControlValueAccessor interface
-    registerOnTouched(fn: any) {
+    public registerOnTouched(fn: any): void {
         this.onTouchedCallback = fn;
     }
 
-    private calculateHslFromHex(v: string) {
+    private calculateHslFromHex(v: string): HueSaturationLightness {
         const rgb = convert.hex.rgb(v);
         const hsl = convert.rgb.hsl(rgb);
         return {
             hue: hsl[0] / 360,
             saturation: hsl[1] / 100,
-            lightness: hsl[2] / 100
+            lightness: hsl[2] / 100,
         }
     }
 

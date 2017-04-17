@@ -1,11 +1,13 @@
 import { Component, Input, forwardRef, ElementRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IMAGE } from './hue-image';
 
 export class HueBase implements ControlValueAccessor {
 
-    @Input() selectedHue: number;
+    @Input() public selectedHue: number;
     public cursorPosition: Vector;
+    private onTouchedCallback: () => void;
+    private onChangeCallback: (_: number) => void;
 
     constructor(private el: ElementRef) {
         this.cursorPosition = {
@@ -14,7 +16,7 @@ export class HueBase implements ControlValueAccessor {
         }
     }
 
-    public setHue(mouseEvent: MouseHandlerOutput) {
+    public setHue(mouseEvent: MouseHandlerOutput): void {
         this.cursorPosition = {
             x: mouseEvent.realWorld.x,
             y: 0,
@@ -22,24 +24,16 @@ export class HueBase implements ControlValueAccessor {
         this.value = mouseEvent.v / mouseEvent.rg;
     }
 
-    //Placeholders for the callbacks which are later providesd
-    //by the Control Value Accessor
-    private onTouchedCallback: () => void;
-    private onChangeCallback: (_: number) => void;
-
-    //get accessor
     get value(): number {
         return this.selectedHue;
-    };
+    }
 
-    //set accessor including call the onchange callback
     set value(v: number) {
         this.selectedHue = v;
         this.onChangeCallback(v);
     }
 
-    //From ControlValueAccessor interface
-    writeValue(v: number) {
+    public writeValue(v: number): void {
         if (v === undefined || v === null) {
             return;
         }
@@ -47,13 +41,11 @@ export class HueBase implements ControlValueAccessor {
         this.selectedHue = v;
     }
 
-    //From ControlValueAccessor interface
-    registerOnChange(fn: any) {
+    public registerOnChange(fn: any) {
         this.onChangeCallback = fn;
     }
 
-    //From ControlValueAccessor interface
-    registerOnTouched(fn: any) {
+    public registerOnTouched(fn: any) {
         this.onTouchedCallback = fn;
     }
 }

@@ -1,5 +1,5 @@
-import { Component, Output, forwardRef, EventEmitter } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { Component, EventEmitter, forwardRef, Output } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import * as convert from 'color-convert';
 import { ColorPickerBaseComponent } from './color-picker-base';
 
@@ -11,10 +11,10 @@ import { ColorPickerBaseComponent } from './color-picker-base';
     `,
     providers: [{
         provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => ColorPicker),
-        multi: true
-    }]
+        useExisting: forwardRef(() => ColorPickerComponent),
+        multi: true,
+    }],
 })
-export class ColorPicker extends ColorPickerBaseComponent {
+export class ColorPickerComponent extends ColorPickerBaseComponent {
 
 }

@@ -1,7 +1,7 @@
 import { Component, forwardRef, ElementRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { IMAGE } from './hue-image';
 import { HueBase } from './hue-base';
+import { IMAGE } from './hue-image';
 
 @Component({
     selector: 'hue',
@@ -21,7 +21,7 @@ import { HueBase } from './hue-base';
             cursor: pointer;
             width: 100%;
             height: 20px;
-            border:none;
+            border: none;
             margin: 16px 0;
             background-size: 100% 100%;
             background-image: url(${IMAGE});
@@ -30,8 +30,8 @@ import { HueBase } from './hue-base';
     providers: [{
         provide: NG_VALUE_ACCESSOR,
         useExisting: forwardRef(() => HueComponent),
-        multi: true
-    }]
+        multi: true,
+    }],
 })
 export class HueComponent extends HueBase {
     constructor(el: ElementRef) {
