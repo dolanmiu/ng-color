@@ -4,7 +4,7 @@
   "description": "Simple Angular 2 Color Picker Component which follow NG2 best practices. No Frills.",
   "scripts": {
     "build": "ngc -p tsconfig.json",
-    "lint": "tslint src/**/*.ts",
+    "lint": "tslint --project .",
     "test": "tsc && karma start",
     "prepublishOnly": "tsc",
     "tsc": "rimraf dist && tsc",
@@ -41,22 +41,22 @@
     "rimraf": "^2.6.1"
   },
   "devDependencies": {
-    "@angular/forms": "^2.4.5",
-    "@angular/platform-browser": "^2.4.5",
     "@angular/common": "^2.0.0",
     "@angular/compiler": "^2.4.5",
     "@angular/compiler-cli": "^2.4.5",
     "@angular/core": "^2.0.0",
+    "@angular/forms": "^2.4.5",
+    "@angular/platform-browser": "^2.4.5",
     "@angular/platform-server": "^2.4.5",
     "@types/es6-shim": "^0.31.32",
     "@types/jasmine": "^2.5.40",
     "@types/protractor": "^4.0.0",
     "@types/selenium-webdriver": "^2.53.39",
-    "codelyzer": "^0.0.28",
+    "codelyzer": "^2.1.1",
     "http-server": "^0.9.0",
     "rxjs": "^5.0.1",
-    "tslint": "^3.15.1",
-    "typescript": "^2.0.2",
+    "tslint": "^5.1.0",
+    "typescript": "^2.2.2",
     "zone.js": "0.7.2"
   },
   "engines": {
