@@ -1,4 +1,4 @@
-import { Component, forwardRef, ElementRef } from '@angular/core';
+import { Component, ElementRef, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { HueBase } from './hue-base';
 import { IMAGE } from './hue-image';

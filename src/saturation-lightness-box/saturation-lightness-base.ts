@@ -1,4 +1,4 @@
-import { Input, ElementRef } from '@angular/core';
+import { ElementRef, Input } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import * as convert from 'color-convert';
 
@@ -7,6 +7,8 @@ export class SaturationLightnessBase implements ControlValueAccessor {
     @Input() public hue: number;
     private saturation: number
     private lightness: number;
+    private onTouchedCallback: () => void;
+    private onChangeCallback: (_: SaturationLightness) => void;
 
     constructor(private el: ElementRef) {
         this.cursorPosition = {
@@ -37,28 +39,20 @@ export class SaturationLightnessBase implements ControlValueAccessor {
         return `#${hex}`;
     }
 
-    //Placeholders for the callbacks which are later providesd
-    //by the Control Value Accessor
-    private onTouchedCallback: () => void;
-    private onChangeCallback: (_: SaturationLightness) => void;
-
-    //get accessor
     get value(): SaturationLightness {
         return {
-            saturation: this.saturation | 0,
-            lightness: this.lightness | 0,
+            saturation: this.saturation || 0,
+            lightness: this.lightness || 0,
         }
     };
 
-    //set accessor including call the onchange callback
     set value(v: SaturationLightness) {
         this.saturation = v.saturation;
         this.lightness = v.lightness;
         this.onChangeCallback(v);
     }
 
-    //From ControlValueAccessor interface
-    writeValue(v: SaturationLightness) {
+    public writeValue(v: SaturationLightness): void {
         if (v === undefined || v === null) {
             return;
         }
@@ -75,13 +69,11 @@ export class SaturationLightnessBase implements ControlValueAccessor {
         this.lightness = v.lightness;
     }
 
-    //From ControlValueAccessor interface
-    registerOnChange(fn: any) {
+    public registerOnChange(fn: any): void {
         this.onChangeCallback = fn;
     }
 
-    //From ControlValueAccessor interface
-    registerOnTouched(fn: any) {
+    public registerOnTouched(fn: any): void {
         this.onTouchedCallback = fn;
     }
 }

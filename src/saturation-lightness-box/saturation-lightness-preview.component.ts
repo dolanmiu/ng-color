@@ -1,7 +1,7 @@
-import { Component, forwardRef, ElementRef } from '@angular/core';
+import { Component, ElementRef, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { IMAGE } from './saturation-lightness-image';
 import { SaturationLightnessBase } from './saturation-lightness-base';
+import { IMAGE } from './saturation-lightness-image';
 
 @Component({
     selector: 'saturation-lightness-preview',
@@ -29,8 +29,8 @@ import { SaturationLightnessBase } from './saturation-lightness-base';
     providers: [{
         provide: NG_VALUE_ACCESSOR,
         useExisting: forwardRef(() => SaturationLightnessPreviewComponent),
-        multi: true
-    }]
+        multi: true,
+    }],
 })
 export class SaturationLightnessPreviewComponent extends SaturationLightnessBase {
     constructor(el: ElementRef) {

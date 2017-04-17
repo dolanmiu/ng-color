@@ -1,4 +1,4 @@
-//main entry point
+// Main entry point
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {AppModule} from './app';
 

@@ -1,21 +1,22 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 import { ColorPickerComponent } from './color-picker/standard-picker.component';
 import { ColorPreviewPickerComponent } from './color-picker/standard-preview-picker.component';
-import { FormsModule } from '@angular/forms';
+import { CursorPreviewComponent } from './cursor/cursor-preview.component';
+import { CursorComponent } from './cursor/cursor.component';
+import { HueRoundedComponent } from './hue/hue-rounded.component';
+import { HueComponent } from './hue/hue.component';
 import { MouseHandlerDirective } from './mouse-handler.directive';
 import { SaturationLightnessComponent } from './saturation-lightness-box/saturation-lightness-box.component';
-import { HueComponent } from './hue/hue.component';
-import { HueRoundedComponent } from './hue/hue-rounded.component';
-import { CursorComponent } from './cursor/cursor.component';
-import { CursorPreviewComponent } from './cursor/cursor-preview.component';
-import { ColorService } from './services/color.service';
 import { SaturationLightnessPreviewComponent } from './saturation-lightness-box/saturation-lightness-preview.component';
+import { ColorService } from './services/color.service';
 
 @NgModule({
     imports: [
         CommonModule,
-        FormsModule
+        FormsModule,
     ],
     declarations: [
         ColorPickerComponent,
@@ -30,17 +31,17 @@ import { SaturationLightnessPreviewComponent } from './saturation-lightness-box/
     ],
     exports: [
         ColorPickerComponent,
-        ColorPreviewPickerComponent
+        ColorPreviewPickerComponent,
     ],
     providers: [
-        ColorService
-    ]
+        ColorService,
+    ],
 })
 export class NgColorModule {
-    static forRoot(): ModuleWithProviders {
+    public static forRoot(): ModuleWithProviders {
         return {
             ngModule: NgColorModule,
-            providers: []
+            providers: [],
         };
     }
 }
