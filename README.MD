@@ -8,6 +8,8 @@
 
 ---
 
+[![Chat on Gitter][gitter-image]][gitter-url]
+
 # ng-color
 > A simple embeddable color picker component for Angular2 following best Angular2 practices, and good coding standards for easy use and easy contribution.
 
@@ -87,3 +89,6 @@ $ npm run lint
 MIT © [Dolan Miu](mailto:dolan_miu@hotmail.com)
 
 Made with 💖 by Dolan Miu 🍆 💦 😝
+
+[gitter-image]: https://badges.gitter.im/dolanmiu/ng-color.svg
+[gitter-url]: https://gitter.im/ng-color/Lobby
