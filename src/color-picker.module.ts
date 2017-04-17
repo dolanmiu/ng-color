@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ColorPicker } from './color-picker/standard-picker.component';
-import { ColorPreviewPicker } from './color-picker/standard-preview-picker.component';
+import { ColorPickerComponent } from './color-picker/standard-picker.component';
+import { ColorPreviewPickerComponent } from './color-picker/standard-preview-picker.component';
 import { FormsModule } from '@angular/forms';
 import { MouseHandlerDirective } from './mouse-handler.directive';
 import { SaturationLightnessComponent } from './saturation-lightness-box/saturation-lightness-box.component';
@@ -18,8 +18,8 @@ import { SaturationLightnessPreviewComponent } from './saturation-lightness-box/
         FormsModule
     ],
     declarations: [
-        ColorPicker,
-        ColorPreviewPicker,
+        ColorPickerComponent,
+        ColorPreviewPickerComponent,
         MouseHandlerDirective,
         SaturationLightnessComponent,
         HueComponent,
@@ -29,8 +29,8 @@ import { SaturationLightnessPreviewComponent } from './saturation-lightness-box/
         SaturationLightnessPreviewComponent,
     ],
     exports: [
-        ColorPicker,
-        ColorPreviewPicker
+        ColorPickerComponent,
+        ColorPreviewPickerComponent
     ],
     providers: [
         ColorService

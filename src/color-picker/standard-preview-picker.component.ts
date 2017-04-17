@@ -35,10 +35,10 @@ import { ColorPickerBaseComponent } from './color-picker-base';
     `],
     providers: [{
         provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => ColorPreviewPicker),
-        multi: true
-    }]
+        useExisting: forwardRef(() => ColorPreviewPickerComponent),
+        multi: true,
+    }],
 })
-export class ColorPreviewPicker extends ColorPickerBaseComponent {
+export class ColorPreviewPickerComponent extends ColorPickerBaseComponent {
 
 }
