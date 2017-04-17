@@ -14,7 +14,6 @@ import { SaturationLightnessBase } from './saturation-lightness-base';
         :host {
             display: block;
             width: 100%;
-            height: 100%;
         }
 
         .saturation-lightness {
