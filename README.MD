@@ -13,9 +13,15 @@
 # ng-color
 > A simple embeddable color picker component for Angular2 following best Angular2 practices, and good coding standards for easy use and easy contribution.
 
-# Demo
+## Demo
+
+#### Web page
 
 https://dolanmiu.github.io/ng-color/example/index.html
+
+#### Plunkr
+
+http://plnkr.co/edit/N2VKBCrNNIwInwI8PVOu?p=preview
 
 ## Installation
 
