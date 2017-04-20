@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-    Simple color picker component for Angular2 
+    Simple color picker component for Angular
 </p>
 
 ---
@@ -11,7 +11,7 @@
 [![Chat on Gitter][gitter-image]][gitter-url]
 
 # ng-color
-> A simple embeddable color picker component for Angular2 following best Angular2 practices, and good coding standards for easy use and easy contribution.
+> A simple embeddable color picker component for Angular following best Angular practices, and good coding standards for easy use and easy contribution.
 
 ## Demo
 
