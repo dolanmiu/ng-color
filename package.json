@@ -6,7 +6,8 @@
     "build:watch": "gulp",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
     "test": "tsc && karma start",
-    "start": "http-server example"
+    "start": "http-server example",
+    "publish": "npm run build && npm publish dist"
   },
   "repository": {
     "type": "git",
