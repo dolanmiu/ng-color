@@ -1,6 +1,25 @@
 import { EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import * as convert from 'color-convert';
+import { SaturationLightness } from '../saturation-lightness-box/saturation-lightness-base';
+
+export interface HueSaturationLightness {
+    hue: number;
+    saturation: number;
+    lightness: number;
+}
+
+export interface ColorOutput {
+    rgb: RGB;
+    hex: number;
+    hexString: string;
+}
+
+export interface RGB {
+    red: number;
+    green: number;
+    blue: number;
+}
 
 export class ColorPickerBaseComponent implements ControlValueAccessor, OnInit {
     public saturationLightness: SaturationLightness;

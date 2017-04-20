@@ -1,6 +1,7 @@
 import { Component, ElementRef, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ColorService } from '../services/color.service';
+import { MouseHandlerOutput } from '../mouse-handler-output';
 import { HueBase } from './hue-base';
 import { IMAGE } from './hue-image';
 

@@ -1,6 +1,8 @@
 import { Component, Input, forwardRef, ElementRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IMAGE } from './hue-image';
+import { MouseHandlerOutput } from '../mouse-handler-output';
+import { Vector } from '../vector';
 
 export class HueBase implements ControlValueAccessor {
 

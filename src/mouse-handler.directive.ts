@@ -1,6 +1,7 @@
 import { Component, Directive, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
 import { Compiler, NgModule, ReflectiveInjector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MouseHandlerOutput } from './mouse-handler-output';
 
 @Directive({
     selector: '[mouse-handler]',

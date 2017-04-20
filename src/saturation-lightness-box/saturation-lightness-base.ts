@@ -1,6 +1,13 @@
 import { ElementRef, Input } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import * as convert from 'color-convert';
+import { MouseHandlerOutput } from '../mouse-handler-output';
+import { Vector } from '../vector';
+
+export interface SaturationLightness {
+    saturation: number;
+    lightness: number;
+}
 
 export class SaturationLightnessBase implements ControlValueAccessor {
     public cursorPosition: Vector;

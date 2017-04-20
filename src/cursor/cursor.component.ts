@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
+import { Vector } from '../vector';
 
 @Component({
     selector: 'cursor',
