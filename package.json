@@ -1,18 +1,16 @@
 {
   "name": "ng-color",
-  "version": "2.0.4",
-  "description": "Simple Angular 2 Color Picker Component which follow NG2 best practices. No Frills.",
+  "version": "0.1.0",
   "scripts": {
-    "build": "ngc -p tsconfig.json",
-    "lint": "tslint --project .",
+    "build": "gulp build",
+    "build:watch": "gulp",
+    "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
     "test": "tsc && karma start",
-    "prepublishOnly": "tsc",
-    "tsc": "rimraf dist && tsc",
     "start": "http-server example"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dolanmiu/ng-color"
+    "url": "https://github.com/username/repo"
   },
   "author": {
     "name": "Dolan Miu",
@@ -35,31 +33,43 @@
   "bugs": {
     "url": "https://github.com/dolanmiu/ng-color/issues"
   },
-  "main": "./dist/index.js",
-  "dependencies": {
-    "color-convert": "^1.9.0",
-    "rimraf": "^2.6.1"
-  },
   "devDependencies": {
-    "@angular/common": "^2.0.0",
-    "@angular/compiler": "^2.4.5",
-    "@angular/compiler-cli": "^2.4.5",
-    "@angular/core": "^2.0.0",
-    "@angular/forms": "^2.4.5",
-    "@angular/platform-browser": "^2.4.5",
-    "@angular/platform-server": "^2.4.5",
-    "@types/es6-shim": "^0.31.32",
-    "@types/jasmine": "^2.5.40",
-    "@types/protractor": "^4.0.0",
-    "@types/selenium-webdriver": "^2.53.39",
-    "codelyzer": "^2.1.1",
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/compiler-cli": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@types/jasmine": "2.5.38",
+    "@types/node": "~6.0.60",
+    "codelyzer": "~2.0.0",
+    "core-js": "^2.4.1",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-rollup": "^2.11.0",
     "http-server": "^0.9.0",
-    "rxjs": "^5.0.1",
-    "tslint": "^5.1.0",
-    "typescript": "^2.2.2",
-    "zone.js": "0.7.2"
+    "jasmine-core": "~2.5.2",
+    "jasmine-spec-reporter": "~3.2.0",
+    "karma": "~1.4.1",
+    "karma-chrome-launcher": "~2.0.0",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^0.2.0",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "node-watch": "^0.5.2",
+    "protractor": "~5.1.0",
+    "rollup": "^0.41.6",
+    "run-sequence": "^1.2.2",
+    "rxjs": "^5.1.0",
+    "ts-node": "~2.0.0",
+    "tslint": "~4.5.0",
+    "typescript": "~2.2.0",
+    "zone.js": "^0.8.4"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=6.0.0"
+  },
+  "dependencies": {
+    "color-convert": "^1.9.0"
   }
 }
