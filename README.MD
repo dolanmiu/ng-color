@@ -17,7 +17,7 @@
 
 #### Plunkr
 
-http://plnkr.co/edit/N2VKBCrNNIwInwI8PVOu?p=preview
+http://plnkr.co/edit/Fd4czYfUso77G28USZtg?p=preview
 
 ## Installation
 
