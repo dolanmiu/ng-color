@@ -36,7 +36,7 @@ import { IMAGE } from './hue-image';
     }],
 })
 export class HueRoundedComponent extends HueBase {
-    private color: string;
+    public color: string;
 
     constructor(private colorService: ColorService, el: ElementRef) {
         super(el);
