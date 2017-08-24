@@ -10,3 +10,4 @@ export { MouseHandlerDirective } from './mouse-handler.directive';
 export { SaturationLightnessComponent } from './saturation-lightness-box/saturation-lightness-box.component';
 export { SaturationLightnessPreviewComponent } from './saturation-lightness-box/saturation-lightness-preview.component';
 export { ColorService } from './services/color.service';
+export { ColorOutput, HueSaturationLightness, RGB } from './color-picker/color-picker-base';
