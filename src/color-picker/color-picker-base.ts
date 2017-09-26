@@ -101,9 +101,9 @@ export class ColorPickerBaseComponent implements ControlValueAccessor, OnInit {
     private createColorOutput(hue: number, saturation: number, lightness: number): ColorOutput {
         const rgbArray = convert.hsl.rgb([hue, saturation, lightness]);
         const rgb: RGB = {
-            red: parseInt(rgbArray[0], 10),
-            green: parseInt(rgbArray[1], 10),
-            blue: parseInt(rgbArray[2], 10),
+            red: rgbArray[0],
+            green: rgbArray[1],
+            blue: rgbArray[2],
         }
         const hex = convert.rgb.hex(rgbArray);
         return {
