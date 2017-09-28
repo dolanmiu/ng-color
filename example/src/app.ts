@@ -1,36 +1,36 @@
-// Our root app component
 /* tslint: disable */
-import { Component, NgModule } from '@angular/core'
+import { Component, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser'
-import { NgColorModule } from './color-picker/color-picker.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgColorModule } from 'ng-color';
+
 @Component({
-    selector: 'my-app',
+    selector: 'app-root',
     template: `
-    <div>
-        <h1>Hello {{name}}</h1>
-        <h2>Style 1</h2>
-        <h3>ng-color-basic</h3>
-        <h4>Using startHex</h4>
-        <ng-color-basic (colorChange)="colorChange($event)" [(ngModel)]="dench" startHex="DEADBF"></ng-color-basic>
-        <div [style.background-color]="hexColor">Output Color: {{hexColor}}</div>
-        {{color | json}}
-        {{dench | json}}
+        <div>
+            <h1>Hello {{name}}</h1>
+            <h2>Style 1</h2>
+            <h3>ng-color-basic</h3>
+            <h4>Using startHex</h4>
+            <ng-color-basic (colorChange)="colorChange($event)" [(ngModel)]="dench" startHex="DEADBF"></ng-color-basic>
+            <div [style.background-color]="hexColor">Output Color: {{hexColor}}</div>
+            {{color | json}}
+            {{dench | json}}
 
-        <h4>Not using startHex</h4>
-        <ng-color-basic></ng-color-basic>
+            <h4>Not using startHex</h4>
+            <ng-color-basic></ng-color-basic>
 
-        <h2>Style 2</h2>
-        <h3>ng-color-basic-preview</h3>
-        <h4>Using startHex</h4>
-        <ng-color-basic-preview (colorChange)="colorChange2($event)" [(ngModel)]="dench2" startHex="23bf26"></ng-color-basic-preview>
-        {{color2 | json}}
-        {{dench2 | json}}
+            <h2>Style 2</h2>
+            <h3>ng-color-basic-preview</h3>
+            <h4>Using startHex</h4>
+            <ng-color-basic-preview (colorChange)="colorChange2($event)" [(ngModel)]="dench2" startHex="23bf26"></ng-color-basic-preview>
+            {{color2 | json}}
+            {{dench2 | json}}
 
-    </div>
-  `,
+        </div>
+    `,
 })
-export class App {
+export class AppComponent {
     public name: string;
     public color: ColorOutput;
     public color2: ColorOutput;
@@ -38,18 +38,18 @@ export class App {
     public dench2: any;
 
     constructor() {
-        this.name = 'Angular2'
+        this.name = 'Angular2';
     }
 
-    colorChange(color: ColorOutput) {
+    public colorChange(color: ColorOutput): void {
         this.color = color;
     }
 
-    colorChange2(color: ColorOutput) {
+    public colorChange2(color: ColorOutput): void {
         this.color2 = color;
     }
 
-    public get hexColor() {
+    public get hexColor(): string {
         if (this.color === undefined) {
             return '';
         }
@@ -59,7 +59,7 @@ export class App {
 
 @NgModule({
     imports: [BrowserModule, NgColorModule, FormsModule],
-    declarations: [App],
-    bootstrap: [App]
+    declarations: [AppComponent],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

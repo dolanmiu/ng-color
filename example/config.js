@@ -30,8 +30,10 @@ System.config({
     '@angular/http/testing': 'npm:@angular/http/bundles/http-testing.umd.js',
     '@angular/router/testing': 'npm:@angular/router/bundles/router-testing.umd.js',
 
+    'ng-color': './ng-color/ng-color.umd.js',
+    
     'color-name': 'npm:color-name',
-    'color-convert': 'npm:color-convert/conversions.js',
+    'color-convert': 'npm:color-convert',
 
     'rxjs': 'npm:rxjs',
     'typescript': 'npm:typescript@2.0.2/lib/typescript.js'

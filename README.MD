@@ -19,6 +19,13 @@
 
 http://plnkr.co/edit/Fd4czYfUso77G28USZtg?p=preview
 
+#### Localhost
+
+1. `npm install`
+2. `npm run build`
+3. `npm start`
+4. Go to `http://localhost:8081/`
+
 ## Installation
 
 To install this library, run:
