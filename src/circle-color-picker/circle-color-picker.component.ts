@@ -1,3 +1,4 @@
+// tslint:disable:component-selector
 import { Component, EventEmitter, forwardRef, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import * as convert from 'color-convert';
@@ -6,13 +7,15 @@ import * as convert from 'color-convert';
     selector: 'ng-color-circle',
     styles: [`
         :host {
-            min-height: 300px;
-            min-width: 300px;
+            display: block;
+            height: 500px;
+            width: 500px;
         }
     `],
     template: `
         <!-- <saturation-lightness-box [hue]="hue" [(ngModel)]="saturationLightness" (ngModelChange)="calculateColor()"></saturation-lightness-box> -->
         <app-hue></app-hue>
+        <app-hsl></app-hsl>
     `,
     providers: [{
         provide: NG_VALUE_ACCESSOR,
