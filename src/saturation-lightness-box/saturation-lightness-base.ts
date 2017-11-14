@@ -12,7 +12,7 @@ export interface SaturationLightness {
 export class SaturationLightnessBase implements ControlValueAccessor {
     public cursorPosition: Vector;
     @Input() public hue: number;
-    private saturation: number
+    private saturation: number;
     private lightness: number;
     private onTouchedCallback: () => void;
     private onChangeCallback: (_: SaturationLightness) => void;
