@@ -12,6 +12,7 @@ import { MouseHandlerDirective } from './mouse-handler.directive';
 import { SaturationLightnessComponent } from './saturation-lightness-box/saturation-lightness-box.component';
 import { SaturationLightnessPreviewComponent } from './saturation-lightness-box/saturation-lightness-preview.component';
 import { ColorService } from './services/color.service';
+import { CircleColorPickerModule } from './circle-color-picker/circle-color-picker.module';
 
 @NgModule({
     imports: [
@@ -32,6 +33,7 @@ import { ColorService } from './services/color.service';
     exports: [
         ColorPickerComponent,
         ColorPreviewPickerComponent,
+        CircleColorPickerModule,
     ],
     providers: [
         ColorService,

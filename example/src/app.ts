@@ -27,6 +27,8 @@ import { NgColorModule } from 'ng-color';
             {{color2 | json}}
             {{dench2 | json}}
 
+            <ng-color-circle></ng-color-circle>
+
         </div>
     `,
 })

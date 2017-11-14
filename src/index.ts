@@ -11,3 +11,4 @@ export { SaturationLightnessComponent } from './saturation-lightness-box/saturat
 export { SaturationLightnessPreviewComponent } from './saturation-lightness-box/saturation-lightness-preview.component';
 export { ColorService } from './services/color.service';
 export { ColorOutput, HueSaturationLightness, RGB } from './color-picker/color-picker-base';
+export { CircleColorPickerComponent } from './circle-color-picker/circle-color-picker.component';
