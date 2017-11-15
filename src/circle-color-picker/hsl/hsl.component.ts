@@ -15,12 +15,13 @@ import { HslBaseComponent } from '../../shared/hsl/hsl-base.component';
         :host {
             display: block;
             width: 100%;
+            height: 100%;
         }
 
         .saturation-lightness {
             cursor: pointer;
-            width: 100%;
-            height: 130px;
+            width: inherit;
+            height: inherit;
             border: none;
             background-size: 100% 100%;
             background-image: url(${IMAGE});

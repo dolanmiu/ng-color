@@ -10,12 +10,21 @@ import * as convert from 'color-convert';
             display: block;
             height: 500px;
             width: 500px;
+            position: relative;
+        }
+
+        .middle {
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            width: 80%;
+            height: 80%
         }
     `],
     template: `
         <!-- <saturation-lightness-box [hue]="hue" [(ngModel)]="saturationLightness" (ngModelChange)="calculateColor()"></saturation-lightness-box> -->
         <app-hue></app-hue>
-        <app-hsl></app-hsl>
+        <app-hsl class="middle"></app-hsl>
     `,
     providers: [{
         provide: NG_VALUE_ACCESSOR,
