@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { CircleColorPickerComponent } from './circle-color-picker.component';
 import { CircleHueComponent } from './circle-hue/circle-hue.component';
@@ -11,6 +12,7 @@ import { CursorComponent } from './cursor/cursor.component';
     imports: [
         CommonModule,
         SharedModule,
+        FormsModule,
     ],
     declarations: [
         CircleColorPickerComponent,

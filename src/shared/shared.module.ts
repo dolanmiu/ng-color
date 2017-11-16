@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { MouseHandlerDirective } from './mouse-handler/mouse-handler.directive';
 import { HslBaseComponent } from './hsl/hsl-base.component';
+import { ColorUtilityService } from './color-utility/color-utility.service';
 
 @NgModule({
     imports: [
@@ -13,6 +14,9 @@ import { HslBaseComponent } from './hsl/hsl-base.component';
     ],
     exports: [
         MouseHandlerDirective,
+    ],
+    providers: [
+        ColorUtilityService,
     ],
 })
 export class SharedModule { }
