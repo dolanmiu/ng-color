@@ -27,8 +27,8 @@ import { NgColorModule } from 'ng-color';
             {{color2 | json}}
             {{dench2 | json}}
 
-            <ng-color-circle></ng-color-circle>
-
+            <ng-color-circle [(ngModel)]="test3"></ng-color-circle>
+            {{test3 | json}}
         </div>
     `,
 })
@@ -38,6 +38,7 @@ export class AppComponent {
     public color2: ColorOutput;
     public dench: any;
     public dench2: any;
+    public test3;
 
     constructor() {
         this.name = 'Angular2';

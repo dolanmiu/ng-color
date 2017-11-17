@@ -6,6 +6,7 @@ import * as convert from 'color-convert';
 import { ColorUtilityService } from '../shared/color-utility/color-utility.service';
 import { ColorOutput } from '../shared/color-utility/color-output';
 import { Hsl } from '../shared/color-utility/hsl';
+import { SaturationLightness } from '../shared/hsl/saturation-lightness';
 
 @Component({
     selector: 'ng-color-circle',
@@ -38,26 +39,24 @@ import { Hsl } from '../shared/color-utility/hsl';
 export class CircleColorPickerComponent implements ControlValueAccessor {
     @Output() public colorChange: EventEmitter<ColorOutput>;
     @Input() public startHex: string;
-    public hsl: Hsl;
+    public hue: number;
+    public saturationLightness: SaturationLightness;
     private onTouchedCallback: () => void;
     private onChangeCallback: (_: ColorOutput) => void;
 
     constructor(private colorUtility: ColorUtilityService) {
-        this.hsl = {
-            saturation: 0.5,
-            lightness: 1,
-            hue: 0,
-        };
         this.colorChange = new EventEmitter<ColorOutput>();
         this.onTouchedCallback = () => { };
         this.onChangeCallback = () => { };
     }
 
     public calculateColor(): void {
-        const colorOutput = this.colorUtility.createColorOutput(this.hsl.hue * 360, this.hsl.saturation * 100, this.hsl.lightness * 100);
+        const colorOutput = this.colorUtility.createColorOutput(this.hue * 360, this.saturationLightness.saturation * 100, this.saturationLightness.lightness * 100);
 
         this.colorChange.emit(colorOutput);
+        console.log(this.saturationLightness);
         // this.value = colorOutput;
+        this.onChangeCallback(colorOutput);
     }
 
     public writeValue(obj: any): void {
