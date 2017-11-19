@@ -8,7 +8,7 @@ import { HslBaseComponent } from '../../shared/hsl/hsl-base.component';
     selector: 'app-hsl',
     template: `
         <div [mouse-handler] [rgX]="1" [rgY]="1" (newValue)="setSaturationLightness($event)" class="saturation-lightness" [style.background-color]="hsl()">
-            <app-cursor [position]="cursorPosition" bothAxis="true"></app-cursor>
+            <app-cursor [position]="cursorPosition"></app-cursor>
         </div>
     `,
     styles: [`

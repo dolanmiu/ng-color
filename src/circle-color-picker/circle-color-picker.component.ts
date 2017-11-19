@@ -20,10 +20,10 @@ import { SaturationLightness } from '../shared/hsl/saturation-lightness';
 
         .middle {
             position: absolute;
-            top: 20%;
-            left: 20%;
-            width: 80%;
-            height: 80%
+            top: 27%;
+            left: 27%;
+            width: 68%;
+            height: 68%
         }
     `],
     template: `
