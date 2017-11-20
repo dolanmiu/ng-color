@@ -76,7 +76,7 @@ export class CircleHueComponent implements ControlValueAccessor {
             return;
         }
 
-        const hue = (Math.atan2(coordsFromCenter.x, coordsFromCenter.y) + Math.PI) / (2 * Math.PI);
+        const hue = (Math.atan2(-coordsFromCenter.x, coordsFromCenter.y) + Math.PI) / (2 * Math.PI);
         console.log(hue);
         this.cursorPosition = {
             x: mouseEvent.realWorld.x,
