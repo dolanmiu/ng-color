@@ -68,21 +68,27 @@ export class CircleHueComponent implements ControlValueAccessor {
         const distanceFromCenter = Math.sqrt(Math.pow(coordsFromCenter.x, 2) + Math.pow(coordsFromCenter.y, 2));
         const outerMaxRadius = this.el.nativeElement.offsetWidth / 2;
         const innerMaxRadius = this.el.nativeElement.offsetWidth / 3.1;
+        const angle = Math.atan2(coordsFromCenter.x, coordsFromCenter.y);
+
         if (distanceFromCenter > outerMaxRadius) {
-            return;
+            this.cursorPosition = this.getCoordinateFromRadius(outerMaxRadius, angle);
+        } else if (distanceFromCenter < innerMaxRadius) {
+            this.cursorPosition = this.getCoordinateFromRadius(innerMaxRadius, angle);
+        } else {
+            this.cursorPosition = {
+                x: mouseEvent.realWorld.x,
+                y: mouseEvent.realWorld.y,
+            };
         }
 
-        if (distanceFromCenter < innerMaxRadius) {
-            return;
-        }
-
-        const hue = (Math.atan2(-coordsFromCenter.x, coordsFromCenter.y) + Math.PI) / (2 * Math.PI);
-        console.log(hue);
-        this.cursorPosition = {
-            x: mouseEvent.realWorld.x,
-            y: mouseEvent.realWorld.y,
-        };
-
+        const hue = (-angle + Math.PI) / (2 * Math.PI);
         this.onChangeCallback(hue);
+    }
+
+    private getCoordinateFromRadius(radius: number, angle: number): Vector {
+        return {
+            x: radius * Math.sin(angle) + this.el.nativeElement.offsetWidth / 2,
+            y: radius * Math.cos(angle) + this.el.nativeElement.offsetHeight / 2,
+        };
     }
 }
