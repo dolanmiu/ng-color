@@ -29,6 +29,9 @@ import { NgColorModule } from 'ng-color';
 
             <ng-color-circle [(ngModel)]="test3"></ng-color-circle>
             {{test3 | json}}
+
+            <ng-color-circle [(ngModel)]="test4" startHex="23bf26" style="width: 300px; height: 300px;"></ng-color-circle>
+            {{test4 | json}}
         </div>
     `,
 })

@@ -1,5 +1,5 @@
 // tslint:disable:component-selector
-import { Component, EventEmitter, forwardRef, Output, Input } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Output, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import * as convert from 'color-convert';
 
@@ -36,7 +36,7 @@ import { SaturationLightness } from '../shared/hsl/saturation-lightness';
         multi: true,
     }],
 })
-export class CircleColorPickerComponent implements ControlValueAccessor {
+export class CircleColorPickerComponent implements ControlValueAccessor, OnInit {
     @Output() public colorChange: EventEmitter<ColorOutput>;
     @Input() public startHex: string;
     public hue: number;
@@ -55,11 +55,22 @@ export class CircleColorPickerComponent implements ControlValueAccessor {
         this.onChangeCallback = () => { };
     }
 
+    public ngOnInit(): void {
+        const hsl = this.colorUtility.calculateHslFromHex(this.startHex || 'ff0000');
+        this.hue = hsl.hue;
+        this.saturationLightness = {
+            saturation: hsl.saturation,
+            lightness: hsl.lightness,
+        };
+        const colorOutput = this.colorUtility.createColorOutput(this.hue * 360, this.saturationLightness.saturation * 100, this.saturationLightness.lightness * 100);
+        this.colorChange.emit(colorOutput);
+        this.onChangeCallback(colorOutput);
+    }
+
     public calculateColor(): void {
         const colorOutput = this.colorUtility.createColorOutput(this.hue * 360, this.saturationLightness.saturation * 100, this.saturationLightness.lightness * 100);
 
         this.colorChange.emit(colorOutput);
-        console.log(this.saturationLightness);
         this.onChangeCallback(colorOutput);
     }
 
