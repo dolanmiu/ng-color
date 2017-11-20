@@ -15,7 +15,7 @@ import { Vector } from '../../vector';
             width: 20px;
             height: 20px;
             box-shadow: 0px 0px 0px 2px #222 inset;
-            transform: translate(-10px, 0px);                        
+            transform: translate(-10px, -10px);                        
         }
     `],
 })
