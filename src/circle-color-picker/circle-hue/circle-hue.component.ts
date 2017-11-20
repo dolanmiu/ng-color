@@ -44,10 +44,12 @@ export class CircleHueComponent implements ControlValueAccessor {
             x: 0,
             y: 0,
         };
+        this.onTouchedCallback = () => { };
+        this.onChangeCallback = () => { };
     }
 
     public writeValue(obj: any): void {
-        throw new Error("Method not implemented.");
+        console.log(obj);
     }
 
     public registerOnChange(fn: any) {
@@ -73,11 +75,14 @@ export class CircleHueComponent implements ControlValueAccessor {
         if (distanceFromCenter < innerMaxRadius) {
             return;
         }
+
+        const hue = (Math.atan2(coordsFromCenter.x, coordsFromCenter.y) + Math.PI) / (2 * Math.PI);
+        console.log(hue);
         this.cursorPosition = {
             x: mouseEvent.realWorld.x,
             y: mouseEvent.realWorld.y,
         };
 
-        // this.value = mouseEvent.v / mouseEvent.rg;
+        this.onChangeCallback(hue);
     }
 }

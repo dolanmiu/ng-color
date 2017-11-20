@@ -27,8 +27,8 @@ import { SaturationLightness } from '../shared/hsl/saturation-lightness';
         }
     `],
     template: `
-        <app-hue></app-hue>
         <app-hsl [hue]="hue" [(ngModel)]="saturationLightness" (ngModelChange)="calculateColor()" class="middle"></app-hsl>
+        <app-hue [(ngModel)]="hue" (ngModelChange)="calculateColor()"></app-hue>
     `,
     providers: [{
         provide: NG_VALUE_ACCESSOR,
@@ -46,6 +46,11 @@ export class CircleColorPickerComponent implements ControlValueAccessor {
 
     constructor(private colorUtility: ColorUtilityService) {
         this.colorChange = new EventEmitter<ColorOutput>();
+        this.saturationLightness = {
+            saturation: 0,
+            lightness: 0,
+        };
+        this.hue = 0;
         this.onTouchedCallback = () => { };
         this.onChangeCallback = () => { };
     }
@@ -55,7 +60,6 @@ export class CircleColorPickerComponent implements ControlValueAccessor {
 
         this.colorChange.emit(colorOutput);
         console.log(this.saturationLightness);
-        // this.value = colorOutput;
         this.onChangeCallback(colorOutput);
     }
 
