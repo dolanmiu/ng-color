@@ -20,8 +20,8 @@ import { HslBaseComponent } from '../../shared/hsl/hsl-base.component';
 
         .saturation-lightness {
             cursor: pointer;
-            width: inherit;
-            height: inherit;
+            width: 100%;
+            height: 100%;
             border: none;
             background-size: 100% 100%;
             background-image: url(${IMAGE});

@@ -22,8 +22,8 @@ import { SaturationLightness } from '../shared/hsl/saturation-lightness';
             position: absolute;
             top: 27%;
             left: 27%;
-            width: 68%;
-            height: 68%
+            width: 46%;
+            height: 46%;
         }
     `],
     template: `
