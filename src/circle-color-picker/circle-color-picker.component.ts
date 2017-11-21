@@ -74,13 +74,13 @@ export class CircleColorPickerComponent implements ControlValueAccessor, OnInit 
         this.onChangeCallback(colorOutput);
     }
 
-    public writeValue(obj: any): void {
+    public writeValue(obj: ColorOutput): void {
         console.log(obj);
     }
-    public registerOnChange(fn: any): void {
+    public registerOnChange(fn: (_: ColorOutput) => void): void {
         this.onChangeCallback = fn;
     }
-    public registerOnTouched(fn: any): void {
+    public registerOnTouched(fn: () => void): void {
         this.onTouchedCallback = fn;
     }
 }
