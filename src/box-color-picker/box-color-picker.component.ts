@@ -9,8 +9,7 @@ import { Hsl } from '../shared/color-utility/hsl';
 import { SaturationLightness } from '../shared/hsl/saturation-lightness';
 
 @Component({
-    selector: 'ng-color-box',
-    // selector: 'ng-color-box, ng-color-basic',
+    selector: 'ng-color-box, ng-color-basic, ng-color-basic-preview',
     styles: [`
         :host {
             display: block;
