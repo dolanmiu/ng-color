@@ -42,9 +42,6 @@ import { NgColorModule, ColorOutput } from 'ng-color';
 export class AppComponent {
     public name: string;
     public color: ColorOutput;
-    public color2: ColorOutput;
-    public dench: ColorOutput;
-    public dench2: ColorOutput;
     public test3;
 
     constructor() {
