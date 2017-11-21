@@ -6,7 +6,8 @@
         "Injectable",
         "ngrx",
         "gitignore",
-        "repo"
+        "repo",
+        "dench"
     ],
     "ignorePaths": [
         ".gitignore"
