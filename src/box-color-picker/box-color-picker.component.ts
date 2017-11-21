@@ -63,7 +63,7 @@ export class BoxColorPickerComponent implements ControlValueAccessor, OnInit {
     }
 
     public writeValue(obj: ColorOutput): void {
-        console.log(obj);
+        // TODO
     }
     public registerOnChange(fn: (_: ColorOutput) => void): void {
         this.onChangeCallback = fn;

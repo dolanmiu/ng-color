@@ -49,7 +49,7 @@ export class CircleHueComponent implements ControlValueAccessor {
     }
 
     public writeValue(obj: any): void {
-        console.log(obj);
+        // TODO
     }
 
     public registerOnChange(fn: any): void {
