@@ -13,6 +13,7 @@ import { SaturationLightnessComponent } from './saturation-lightness-box/saturat
 import { SaturationLightnessPreviewComponent } from './saturation-lightness-box/saturation-lightness-preview.component';
 import { ColorService } from './services/color.service';
 import { CircleColorPickerModule } from './circle-color-picker/circle-color-picker.module';
+import { BoxColorPickerModule } from './box-color-picker/box-color-picker.module';
 
 @NgModule({
     imports: [
@@ -34,6 +35,7 @@ import { CircleColorPickerModule } from './circle-color-picker/circle-color-pick
         ColorPickerComponent,
         ColorPreviewPickerComponent,
         CircleColorPickerModule,
+        BoxColorPickerModule,
     ],
     providers: [
         ColorService,
