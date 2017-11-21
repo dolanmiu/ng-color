@@ -1,9 +1,9 @@
-import { Component, ElementRef, forwardRef } from '@angular/core';
+import { Component, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { IMAGE } from './box-hue-image';
-import { Vector } from '../../vector';
 import { MouseHandlerOutput } from '../../shared/mouse-handler/mouse-handler-output';
+import { Vector } from '../../vector';
+import { IMAGE } from './box-hue-image';
 
 @Component({
     selector: 'app-hue',
@@ -40,7 +40,7 @@ export class BoxHueComponent implements ControlValueAccessor {
     private onTouchedCallback: () => void;
     private onChangeCallback: (_: number) => void;
 
-    constructor(private el: ElementRef) {
+    constructor() {
         this.cursorPosition = {
             x: 0,
             y: 0,
@@ -53,11 +53,11 @@ export class BoxHueComponent implements ControlValueAccessor {
         console.log(obj);
     }
 
-    public registerOnChange(fn: any) {
+    public registerOnChange(fn: any): void {
         this.onChangeCallback = fn;
     }
 
-    public registerOnTouched(fn: any) {
+    public registerOnTouched(fn: any): void {
         this.onTouchedCallback = fn;
     }
 

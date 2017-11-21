@@ -1,11 +1,9 @@
 // tslint:disable:component-selector
-import { Component, EventEmitter, forwardRef, Output, Input, OnInit } from '@angular/core';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import * as convert from 'color-convert';
 
-import { ColorUtilityService } from '../shared/color-utility/color-utility.service';
 import { ColorOutput } from '../shared/color-utility/color-output';
-import { Hsl } from '../shared/color-utility/hsl';
+import { ColorUtilityService } from '../shared/color-utility/color-utility.service';
 import { SaturationLightness } from '../shared/hsl/saturation-lightness';
 
 @Component({

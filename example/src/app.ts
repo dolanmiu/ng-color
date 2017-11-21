@@ -2,7 +2,7 @@
 import { Component, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgColorModule, ColorOutput } from 'ng-color';
+import { ColorOutput, NgColorModule } from 'ng-color';
 
 @Component({
     selector: 'app-root',
@@ -13,7 +13,7 @@ import { NgColorModule, ColorOutput } from 'ng-color';
             <h3>ng-color-box</h3>
             <h4>Using startHex</h4>
             <ng-color-box (ngModelChange)="colorChange($event)" [(ngModel)]="dench" startHex="DEADBF"></ng-color-box>
-            <div [style.background-color]="color ? color.hexString : ''">Output Color: {{color ? color.hexString : ''}}</div>            
+            <div [style.background-color]="color ? color.hexString : ''">Output Color: {{color ? color.hexString : ''}}</div>
             {{color | json}}
             {{dench | json}}
 
@@ -24,12 +24,12 @@ import { NgColorModule, ColorOutput } from 'ng-color';
             <ng-color-box [(ngModel)]="test6" style="width: 500px;"></ng-color-box>
             {{test6 | json}}
 
-            <h2>Circle</h2>            
+            <h2>Circle</h2>
             <h4>Using startHex</h4>
             <ng-color-circle [(ngModel)]="test5" startHex="23bf26"></ng-color-circle>
             {{test5 | json}}
 
-            <h4>Not using startHex</h4>            
+            <h4>Not using startHex</h4>
             <ng-color-circle [(ngModel)]="test3"></ng-color-circle>
             {{test3 | json}}
 
@@ -57,6 +57,6 @@ export class AppComponent {
 @NgModule({
     imports: [BrowserModule, NgColorModule, FormsModule],
     declarations: [AppComponent],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,8 +1,8 @@
 import { Component, ElementRef, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { IMAGE } from '../../shared/hsl/hsl-image';
 import { HslBaseComponent } from '../../shared/hsl/hsl-base.component';
+import { IMAGE } from '../../shared/hsl/hsl-image';
 
 @Component({
     selector: 'app-hsl',

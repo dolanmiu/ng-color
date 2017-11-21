@@ -1,9 +1,9 @@
 import { Component, ElementRef, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { IMAGE } from './circle-hue-image';
 import { Vector } from 'vector';
 import { MouseHandlerOutput } from '../../shared/mouse-handler/mouse-handler-output';
+import { IMAGE } from './circle-hue-image';
 
 @Component({
     selector: 'app-hue',
@@ -52,18 +52,18 @@ export class CircleHueComponent implements ControlValueAccessor {
         console.log(obj);
     }
 
-    public registerOnChange(fn: any) {
+    public registerOnChange(fn: any): void {
         this.onChangeCallback = fn;
     }
 
-    public registerOnTouched(fn: any) {
+    public registerOnTouched(fn: any): void {
         this.onTouchedCallback = fn;
     }
 
     public setHue(mouseEvent: MouseHandlerOutput): void {
         const coordsFromCenter = {
             x: mouseEvent.realWorld.x - this.el.nativeElement.offsetWidth / 2,
-            y: mouseEvent.realWorld.y - this.el.nativeElement.offsetHeight / 2
+            y: mouseEvent.realWorld.y - this.el.nativeElement.offsetHeight / 2,
         };
         const distanceFromCenter = Math.sqrt(Math.pow(coordsFromCenter.x, 2) + Math.pow(coordsFromCenter.y, 2));
         const outerMaxRadius = this.el.nativeElement.offsetWidth / 2;

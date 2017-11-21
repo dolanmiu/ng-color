@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import * as convert from 'color-convert';
 
 import { ColorOutput } from './color-output';
-import { Rgb } from './rgb';
 import { Hsl } from './hsl';
+import { Rgb } from './rgb';
 
 @Injectable()
 export class ColorUtilityService {
@@ -35,6 +34,6 @@ export class ColorUtilityService {
             hue: hsl[0] / 360,
             saturation: hsl[1] / 100,
             lightness: hsl[2] / 100,
-        }
+        };
     }
 }

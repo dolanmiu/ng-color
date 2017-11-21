@@ -2,8 +2,8 @@ import { ElementRef, Input } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import * as convert from 'color-convert';
 
-import { MouseHandlerOutput } from '../mouse-handler/mouse-handler-output';
 import { Vector } from '../../vector';
+import { MouseHandlerOutput } from '../mouse-handler/mouse-handler-output';
 
 export interface SaturationLightness {
     saturation: number;
@@ -51,8 +51,8 @@ export class HslBaseComponent implements ControlValueAccessor {
         return {
             saturation: this.saturation || 0,
             lightness: this.lightness || 0,
-        }
-    };
+        };
+    }
 
     set value(v: SaturationLightness) {
         this.saturation = v.saturation;
