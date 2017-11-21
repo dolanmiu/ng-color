@@ -2,7 +2,7 @@
 import { Component, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgColorModule } from 'ng-color';
+import { NgColorModule, ColorOutput } from 'ng-color';
 
 @Component({
     selector: 'app-root',
@@ -12,8 +12,8 @@ import { NgColorModule } from 'ng-color';
             <h2>Box</h2>
             <h3>ng-color-box</h3>
             <h4>Using startHex</h4>
-            <ng-color-box (colorChange)="colorChange($event)" [(ngModel)]="dench" startHex="DEADBF"></ng-color-box>
-            <div [style.background-color]="color ? color.hexString : ''">Output Color: {{color.hexString}}</div>
+            <ng-color-box (ngModelChange)="colorChange($event)" [(ngModel)]="dench" startHex="DEADBF"></ng-color-box>
+            <div [style.background-color]="color ? color.hexString : ''">Output Color: {{color ? color.hexString : ''}}</div>            
             {{color | json}}
             {{dench | json}}
 
@@ -43,8 +43,8 @@ export class AppComponent {
     public name: string;
     public color: ColorOutput;
     public color2: ColorOutput;
-    public dench: any;
-    public dench2: any;
+    public dench: ColorOutput;
+    public dench2: ColorOutput;
     public test3;
 
     constructor() {
@@ -52,11 +52,8 @@ export class AppComponent {
     }
 
     public colorChange(color: ColorOutput): void {
+        console.log(color);
         this.color = color;
-    }
-
-    public colorChange2(color: ColorOutput): void {
-        this.color2 = color;
     }
 }
 

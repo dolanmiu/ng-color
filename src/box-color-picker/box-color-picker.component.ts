@@ -32,7 +32,6 @@ import { SaturationLightness } from '../shared/hsl/saturation-lightness';
     }],
 })
 export class BoxColorPickerComponent implements ControlValueAccessor, OnInit {
-    @Output() public colorChange: EventEmitter<ColorOutput>;
     @Input() public startHex: string;
     public hue: number;
     public saturationLightness: SaturationLightness;
@@ -40,7 +39,6 @@ export class BoxColorPickerComponent implements ControlValueAccessor, OnInit {
     private onChangeCallback: (_: ColorOutput) => void;
 
     constructor(private colorUtility: ColorUtilityService) {
-        this.colorChange = new EventEmitter<ColorOutput>();
         this.saturationLightness = {
             saturation: 0,
             lightness: 0,
@@ -58,14 +56,11 @@ export class BoxColorPickerComponent implements ControlValueAccessor, OnInit {
             lightness: hsl.lightness,
         };
         const colorOutput = this.colorUtility.createColorOutput(this.hue * 360, this.saturationLightness.saturation * 100, this.saturationLightness.lightness * 100);
-        this.colorChange.emit(colorOutput);
         this.onChangeCallback(colorOutput);
     }
 
     public calculateColor(): void {
         const colorOutput = this.colorUtility.createColorOutput(this.hue * 360, this.saturationLightness.saturation * 100, this.saturationLightness.lightness * 100);
-
-        this.colorChange.emit(colorOutput);
         this.onChangeCallback(colorOutput);
     }
 
