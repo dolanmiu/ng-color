@@ -42,7 +42,6 @@ import { ColorOutput, NgColorModule } from 'ng-color';
 export class AppComponent {
     public name: string;
     public color: ColorOutput;
-    public test3;
 
     constructor() {
         this.name = 'Angular2';
