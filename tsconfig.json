@@ -9,10 +9,10 @@
       "dom"
     ],
     "skipLibCheck": true,
-    "exclude": [
-      "example"
-    ],
     "noUnusedLocals": true,
     "types": []
-  }
+  },
+  "exclude": [
+    "example"
+  ]
 }
