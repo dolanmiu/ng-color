@@ -1,26 +1,26 @@
-import { Component, Directive, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
-import { Compiler, NgModule, ReflectiveInjector } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { Directive, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { MouseHandlerOutput } from './mouse-handler-output';
 
 @Directive({
-    selector: '[mouse-handler]',
-    host: {
-        '(mousedown)': 'start($event)',
-        '(touchstart)': 'start($event)',
-    },
+    selector: '[appMouseHandler]',
 })
 export class MouseHandlerDirective {
     @Output() public newValue = new EventEmitter<MouseHandlerOutput>();
-    @Input('mouse-handler') public slider: string;
     @Input() public rgX: number;
     @Input() public rgY: number;
     private listenerMove: any;
     private listenerStop: any;
+    @HostListener('mousedown', ['$event']) public mousedown(e: Event): void {
+        this.start(e);
+    }
+
+    @HostListener('touchstart', ['$event']) public touchstart(e: Event): void {
+        this.start(e);
+    }
 
     constructor(private el: ElementRef) {
-        this.listenerMove = (event: any) => { this.move(event) };
-        this.listenerStop = () => { this.stop() };
+        this.listenerMove = (event: any) => { this.move(event); };
+        this.listenerStop = () => { this.stop(); };
     }
 
     private setCursor(event: any): void {
@@ -40,7 +40,7 @@ export class MouseHandlerDirective {
                     y: y,
                 },
             });
-        } else if (this.rgX === undefined && this.rgY !== undefined) {//ready to use vertical sliders
+        } else if (this.rgX === undefined && this.rgY !== undefined) {// ready to use vertical sliders
             this.newValue.emit({
                 v: y / height,
                 rg: this.rgY,
@@ -61,12 +61,12 @@ export class MouseHandlerDirective {
         }
     }
 
-    private move(event: any) {
+    private move(event: any): void {
         event.preventDefault();
         this.setCursor(event);
     }
 
-    private start(event: any) {
+    private start(event: any): void {
         this.setCursor(event);
         document.addEventListener('mousemove', this.listenerMove);
         document.addEventListener('touchmove', this.listenerMove);
