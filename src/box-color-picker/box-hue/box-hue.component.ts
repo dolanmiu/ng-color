@@ -1,4 +1,4 @@
-import { Component, forwardRef } from '@angular/core';
+import { Component, ElementRef, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { MouseHandlerOutput } from '../../shared/mouse-handler/mouse-handler-output';
@@ -40,7 +40,7 @@ export class BoxHueComponent implements ControlValueAccessor {
     private onTouchedCallback: () => void;
     private onChangeCallback: (_: number) => void;
 
-    constructor() {
+    constructor(private el: ElementRef) {
         this.cursorPosition = {
             x: 0,
             y: 0,
@@ -49,8 +49,11 @@ export class BoxHueComponent implements ControlValueAccessor {
         this.onChangeCallback = () => { };
     }
 
-    public writeValue(obj: any): void {
-        // TODO
+    public writeValue(hue: any): void {
+        this.cursorPosition = {
+            x: hue * this.el.nativeElement.offsetWidth,
+            y: 0,
+        };
     }
 
     public registerOnChange(fn: any): void {
