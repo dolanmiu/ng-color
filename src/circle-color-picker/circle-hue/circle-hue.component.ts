@@ -49,9 +49,6 @@ export class CircleHueComponent implements ControlValueAccessor {
     }
 
     public writeValue(hue: any): void {
-        if (!hue) {
-            return;
-        }
         const angle = -(hue * (2 * Math.PI) - Math.PI);
         const radius = this.el.nativeElement.offsetWidth / 2;
 
