@@ -38,7 +38,7 @@ $ npm install ng-color --save
 
 ## How to use
 
-To Use this library in your `AppModule`:
+To use this library in your `AppModule`:
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -86,7 +86,6 @@ What it looks like is shown in the header
 ```html
 <ng-color-circle (ngModelChange)="colorChange($event)"></ng-color-circle>
 ```
-It has a `colorChange` output, which as you know, fires an event when a new color is selected. The event contains the selected color.
 
 ## Development
 
