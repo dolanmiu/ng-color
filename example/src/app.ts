@@ -12,7 +12,7 @@ import { ColorOutput, NgColorModule } from 'ng-color';
             <h2>Box</h2>
             <h3>ng-color-box</h3>
             <h4>Using startHex</h4>
-            <ng-color-box (ngModelChange)="colorChange($event)" [(ngModel)]="dench" startHex="DEADBF"></ng-color-box>
+            <ng-color-box (ngModelChange)="colorChange($event)" [(ngModel)]="dench" startHex="23bf26"></ng-color-box>
             <div [style.background-color]="color ? color.hexString : ''">Output Color: {{color ? color.hexString : ''}}</div>
             {{color | json}}
             {{dench | json}}

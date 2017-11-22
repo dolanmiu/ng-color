@@ -48,8 +48,14 @@ export class CircleHueComponent implements ControlValueAccessor {
         this.onChangeCallback = () => { };
     }
 
-    public writeValue(obj: any): void {
-        // TODO
+    public writeValue(hue: any): void {
+        if (!hue) {
+            return;
+        }
+        const angle = -(hue * (2 * Math.PI) - Math.PI);
+        const radius = this.el.nativeElement.offsetWidth / 2;
+
+        this.cursorPosition = this.getCoordinateFromRadius(radius, angle);
     }
 
     public registerOnChange(fn: any): void {
