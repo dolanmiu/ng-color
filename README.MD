@@ -19,7 +19,7 @@
 
 #### Plunkr
 
-http://plnkr.co/edit/Fd4czYfUso77G28USZtg?p=preview
+http://plnkr.co/edit/KqVZ4WnFH0xeAqgOdy3R?p=preview
 
 #### Run example folder locally (mac/unix only)
 
