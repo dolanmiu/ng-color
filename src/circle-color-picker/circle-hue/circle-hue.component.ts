@@ -1,8 +1,8 @@
 import { Component, ElementRef, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { Vector } from 'vector';
 import { MouseHandlerOutput } from '../../shared/mouse-handler/mouse-handler-output';
+import { Vector } from '../../vector';
 import { IMAGE } from './circle-hue-image';
 
 @Component({
