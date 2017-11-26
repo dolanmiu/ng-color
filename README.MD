@@ -1,3 +1,7 @@
+# ng-color
+
+> Simple embeddable color picker components for Angular following best Angular practices, and good coding standards for easy use and easy contribution.
+
 <p align="center">
     <img alt="ng-color" src="http://i.imgur.com/Ccpv8jo.png" height="173">
     <img alt="ng-color" src="https://user-images.githubusercontent.com/2917613/33105163-be204d3e-cf23-11e7-985e-b27b4a4793af.png" height="173">
@@ -11,9 +15,6 @@
 
 [![Chat on Gitter][gitter-image]][gitter-url] 
 [![Build Status][travis-image]][travis-url]
-
-# ng-color
-> Simple embeddable color picker components for Angular following best Angular practices, and good coding standards for easy use and easy contribution.
 
 ## Demos
 
