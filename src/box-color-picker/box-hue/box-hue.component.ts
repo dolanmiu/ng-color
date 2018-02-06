@@ -8,7 +8,8 @@ import { IMAGE } from './box-hue-image';
 @Component({
     selector: 'app-hue',
     templateUrl: './box-hue.component.html',
-    styles: [`
+    styles: [
+        `
         :host {
             display: block;
             width: 100%;
@@ -24,12 +25,15 @@ import { IMAGE } from './box-hue-image';
             background-size: 100% 100%;
             background-image: url(${IMAGE});
         }
-    `],
-    providers: [{
-        provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => BoxHueComponent),
-        multi: true,
-    }],
+    `,
+    ],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => BoxHueComponent),
+            multi: true,
+        },
+    ],
 })
 export class BoxHueComponent implements ControlValueAccessor {
     public cursorPosition: Vector;
@@ -41,8 +45,8 @@ export class BoxHueComponent implements ControlValueAccessor {
             x: 0,
             y: 0,
         };
-        this.onTouchedCallback = () => { };
-        this.onChangeCallback = () => { };
+        this.onTouchedCallback = () => {};
+        this.onChangeCallback = () => {};
     }
 
     public writeValue(hue: any): void {

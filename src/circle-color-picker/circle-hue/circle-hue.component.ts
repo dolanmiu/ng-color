@@ -8,7 +8,8 @@ import { IMAGE } from './circle-hue-image';
 @Component({
     selector: 'app-hue',
     templateUrl: './circle-hue.component.html',
-    styles: [`
+    styles: [
+        `
         :host {
             display: block;
             width: 100%;
@@ -23,12 +24,15 @@ import { IMAGE } from './circle-hue-image';
             background-size: 100% 100%;
             background-image: url(${IMAGE});
         }
-    `],
-    providers: [{
-        provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => CircleHueComponent),
-        multi: true,
-    }],
+    `,
+    ],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => CircleHueComponent),
+            multi: true,
+        },
+    ],
 })
 export class CircleHueComponent implements ControlValueAccessor {
     public cursorPosition: Vector;
@@ -40,8 +44,8 @@ export class CircleHueComponent implements ControlValueAccessor {
             x: 0,
             y: 0,
         };
-        this.onTouchedCallback = () => { };
-        this.onChangeCallback = () => { };
+        this.onTouchedCallback = () => {};
+        this.onChangeCallback = () => {};
     }
 
     public writeValue(hue: any): void {

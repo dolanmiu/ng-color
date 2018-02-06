@@ -9,19 +9,8 @@ import { CircleHueComponent } from './circle-hue/circle-hue.component';
 import { CursorComponent } from './cursor/cursor.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        SharedModule,
-        FormsModule,
-    ],
-    declarations: [
-        CircleColorPickerComponent,
-        CircleHueComponent,
-        HslComponent,
-        CursorComponent,
-    ],
-    exports: [
-        CircleColorPickerComponent,
-    ],
+    imports: [CommonModule, SharedModule, FormsModule],
+    declarations: [CircleColorPickerComponent, CircleHueComponent, HslComponent, CursorComponent],
+    exports: [CircleColorPickerComponent],
 })
-export class CircleColorPickerModule { }
+export class CircleColorPickerModule {}

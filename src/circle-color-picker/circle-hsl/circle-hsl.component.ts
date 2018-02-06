@@ -8,7 +8,8 @@ import { IMAGE } from '../../shared/hsl/hsl-image';
 @Component({
     selector: 'app-hsl',
     templateUrl: './circle-hsl.component.html',
-    styles: [`
+    styles: [
+        `
         :host {
             display: block;
             width: 100%;
@@ -23,12 +24,15 @@ import { IMAGE } from '../../shared/hsl/hsl-image';
             background-size: 100% 100%;
             background-image: url(${IMAGE});
         }
-    `],
-    providers: [{
-        provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => HslComponent),
-        multi: true,
-    }],
+    `,
+    ],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => HslComponent),
+            multi: true,
+        },
+    ],
 })
 export class HslComponent extends HslBaseComponent {
     constructor(el: ElementRef, colorService: ColorUtilityService) {

@@ -7,8 +7,7 @@ import { Rgb } from './rgb';
 
 @Injectable()
 export class ColorUtilityService {
-
-    constructor() { }
+    constructor() {}
 
     public createColorOutput(hue: number, saturation: number, lightness: number): ColorOutput {
         const rgbArray = convert.hsl.rgb([hue, saturation, lightness]);

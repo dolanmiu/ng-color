@@ -10,17 +10,23 @@ export class MouseHandlerDirective {
     @Input() public rgY: number;
     private listenerMove: any;
     private listenerStop: any;
-    @HostListener('mousedown', ['$event']) public mousedown(e: Event): void {
+    @HostListener('mousedown', ['$event'])
+    public mousedown(e: Event): void {
         this.start(e);
     }
 
-    @HostListener('touchstart', ['$event']) public touchstart(e: Event): void {
+    @HostListener('touchstart', ['$event'])
+    public touchstart(e: Event): void {
         this.start(e);
     }
 
     constructor(private el: ElementRef) {
-        this.listenerMove = (event: any) => { this.move(event); };
-        this.listenerStop = () => { this.stop(); };
+        this.listenerMove = (event: any) => {
+            this.move(event);
+        };
+        this.listenerStop = () => {
+            this.stop();
+        };
     }
 
     private setCursor(event: any): void {
@@ -32,7 +38,7 @@ export class MouseHandlerDirective {
         if (this.rgX !== undefined && this.rgY !== undefined) {
             this.newValue.emit({
                 s: x / width,
-                v: (1 - y / height),
+                v: 1 - y / height,
                 rgX: this.rgX,
                 rgY: this.rgY,
                 realWorld: {
@@ -40,7 +46,8 @@ export class MouseHandlerDirective {
                     y: y,
                 },
             });
-        } else if (this.rgX === undefined && this.rgY !== undefined) {// ready to use vertical sliders
+        } else if (this.rgX === undefined && this.rgY !== undefined) {
+            // ready to use vertical sliders
             this.newValue.emit({
                 v: y / height,
                 rg: this.rgY,
@@ -82,9 +89,17 @@ export class MouseHandlerDirective {
     }
 
     private getX(event: any): number {
-        return (event.pageX !== undefined ? event.pageX : event.touches[0].pageX) - this.el.nativeElement.getBoundingClientRect().left - window.pageXOffset;
+        return (
+            (event.pageX !== undefined ? event.pageX : event.touches[0].pageX) -
+            this.el.nativeElement.getBoundingClientRect().left -
+            window.pageXOffset
+        );
     }
     private getY(event: any): number {
-        return (event.pageY !== undefined ? event.pageY : event.touches[0].pageY) - this.el.nativeElement.getBoundingClientRect().top - window.pageYOffset;
+        return (
+            (event.pageY !== undefined ? event.pageY : event.touches[0].pageY) -
+            this.el.nativeElement.getBoundingClientRect().top -
+            window.pageYOffset
+        );
     }
 }

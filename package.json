@@ -11,7 +11,8 @@
     "test": "tsc && karma start",
     "start": "http-server example",
     "publish": "npm run build && npm publish dist",
-    "sass-lint": "sass-lint \"src/**/*.scss\" -v -q"
+    "sass-lint": "sass-lint \"src/**/*.scss\" -v -q",
+    "style": "prettier -l --trailing-comma all --print-width 140 --arrow-parens always --single-quote true \"src/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -73,6 +74,7 @@
     "node-sass": "^4.5.2",
     "node-sass-tilde-importer": "^1.0.0",
     "node-watch": "^0.5.2",
+    "prettier": "^1.10.2",
     "protractor": "~5.1.0",
     "rollup": "0.41.6",
     "run-sequence": "^1.2.2",
