@@ -1,11 +1,13 @@
+$shadow-color: #222;
+
 .cursor {
-    cursor: pointer;
-    position: relative;
     border-radius: 50%;
-    width: 20px;
+    box-shadow: 0 0 0 2px $shadow-color inset;
+    cursor: pointer;
     height: 20px;
-    transform: translate(-10px, 0px);
-    box-shadow: 0px 0px 0px 2px #222 inset;
+    position: relative;
+    transform: translate(-10px, 0);
+    width: 20px;
 }
 
 .offset {

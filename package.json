@@ -12,7 +12,8 @@
     "lint": "tslint --project .",
     "test": "tsc && karma start",
     "start": "http-server example",
-    "publish": "npm run build && npm publish dist"
+    "publish": "npm run build && npm publish dist",
+    "sass-lint": "sass-lint \"src/**/*.scss\" -v -q"
   },
   "repository": {
     "type": "git",
@@ -81,6 +82,7 @@
     "rollup": "0.41.6",
     "run-sequence": "^1.2.2",
     "rxjs": "^5.1.0",
+    "sass-lint": "^1.12.1",
     "ts-node": "~2.0.0",
     "tslint": "^5.8.0",
     "typescript": "2.2.0",
