@@ -1,6 +1,6 @@
 {
   "name": "ng-color",
-  "version": "0.0.0",
+  "version": "4.1.0-alpha.1",
   "scripts": {
     "build": "ng-packagr -p package.json",
     "docs": "npm run docs:build",
@@ -10,7 +10,8 @@
     "lint": "tslint --project .",
     "test": "tsc && karma start",
     "start": "http-server example",
-    "publish": "npm run build && npm publish dist",
+    "prepublishOnly": "npm run build",
+    "publish": "npm publish dist",
     "sass-lint": "sass-lint \"src/**/*.scss\" -v -q",
     "style": "prettier -l --trailing-comma all --print-width 140 --arrow-parens always --single-quote true \"src/**/*.ts\""
   },
