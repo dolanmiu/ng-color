@@ -1,16 +1,13 @@
 import { Component, ElementRef, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
+import { ColorUtilityService } from '../../shared/color-utility/color-utility.service';
 import { HslBaseComponent } from '../../shared/hsl/hsl-base.component';
 import { IMAGE } from '../../shared/hsl/hsl-image';
 
 @Component({
     selector: 'app-hsl',
-    template: `
-        <div appMouseHandler [rgX]="1" [rgY]="1" (newValue)="setSaturationLightness($event)" class="saturation-lightness" [style.background-color]="hsl()">
-            <app-cursor [position]="cursorPosition"></app-cursor>
-        </div>
-    `,
+    templateUrl: './circle-hsl.component.html',
     styles: [`
         :host {
             display: block;
@@ -34,7 +31,7 @@ import { IMAGE } from '../../shared/hsl/hsl-image';
     }],
 })
 export class HslComponent extends HslBaseComponent {
-    constructor(el: ElementRef) {
-        super(el);
+    constructor(el: ElementRef, colorService: ColorUtilityService) {
+        super(el, colorService);
     }
 }

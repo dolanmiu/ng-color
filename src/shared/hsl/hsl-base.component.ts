@@ -1,8 +1,8 @@
 import { ElementRef, Input } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
-import * as convert from 'color-convert';
 
 import { Vector } from '../../vector';
+import { ColorUtilityService } from '../color-utility/color-utility.service';
 import { MouseHandlerOutput } from '../mouse-handler/mouse-handler-output';
 
 export interface SaturationLightness {
@@ -18,7 +18,7 @@ export class HslBaseComponent implements ControlValueAccessor {
     private onTouchedCallback: () => void;
     private onChangeCallback: (_: SaturationLightness) => void;
 
-    constructor(private el: ElementRef) {
+    constructor(private el: ElementRef, private readonly colorService: ColorUtilityService) {
         this.cursorPosition = {
             x: 0.5,
             y: 0.5,
@@ -42,9 +42,11 @@ export class HslBaseComponent implements ControlValueAccessor {
     }
 
     public hsl(): string {
-        const rgbArray = convert.hsl.rgb([this.hue * 360, 100, 50]);
-        const hex = convert.rgb.hex(rgbArray);
-        return `#${hex}`;
+        return this.colorService.calculateHexFromHsl({
+            hue: this.hue * 360,
+            saturation: 100,
+            lightness: 50,
+        });
     }
 
     get value(): SaturationLightness {

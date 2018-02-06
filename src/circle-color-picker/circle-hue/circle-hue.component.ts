@@ -7,11 +7,7 @@ import { IMAGE } from './circle-hue-image';
 
 @Component({
     selector: 'app-hue',
-    template: `
-        <div appMouseHandler [rgX]="1" [rgY]="1" (newValue)="setHue($event)" class="hue">
-            <app-cursor [position]="cursorPosition"></app-cursor>
-        </div>
-    `,
+    templateUrl: './circle-hue.component.html',
     styles: [`
         :host {
             display: block;

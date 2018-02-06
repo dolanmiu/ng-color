@@ -8,21 +8,8 @@ import { SaturationLightness } from '../shared/hsl/saturation-lightness';
 
 @Component({
     selector: 'ng-color-box, ng-color-basic, ng-color-basic-preview',
-    styles: [`
-        :host {
-            display: block;
-            height: 200px;
-            position: relative;
-        }
-
-        .middle {
-            height: calc(100% - 36px);
-        }
-    `],
-    template: `
-        <app-hsl [hue]="hue" [(ngModel)]="saturationLightness" (ngModelChange)="calculateColor()" class="middle"></app-hsl>
-        <app-hue [(ngModel)]="hue" (ngModelChange)="calculateColor()"></app-hue>
-    `,
+    styleUrls: ['./box-color-picker.component.scss'],
+    templateUrl: './box-color-picker.component.html',
     providers: [{
         provide: NG_VALUE_ACCESSOR,
         useExisting: forwardRef(() => BoxColorPickerComponent),

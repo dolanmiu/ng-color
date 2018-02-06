@@ -12,6 +12,7 @@ export class ColorUtilityService {
 
     public createColorOutput(hue: number, saturation: number, lightness: number): ColorOutput {
         const rgbArray = convert.hsl.rgb([hue, saturation, lightness]);
+
         const rgb: Rgb = {
             red: rgbArray[0],
             green: rgbArray[1],
@@ -35,5 +36,11 @@ export class ColorUtilityService {
             saturation: hsl[1] / 100,
             lightness: hsl[2] / 100,
         };
+    }
+
+    public calculateHexFromHsl(hsl: Hsl): string {
+        const rgbArray = convert.hsl.rgb([hsl.hue, hsl.saturation, hsl.lightness]);
+        const hex = convert.rgb.hex(rgbArray);
+        return `#${hex}`;
     }
 }

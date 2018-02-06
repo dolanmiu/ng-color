@@ -4,9 +4,7 @@ import { Vector } from '../../vector';
 
 @Component({
     selector: 'app-cursor',
-    template: `
-        <div class="cursor" [style.left.px]="position?.x" [style.top.px]="position?.y"></div>
-    `,
+    templateUrl: './circle-cursor.component.html',
     styles: [`
         .cursor {
             cursor: pointer;

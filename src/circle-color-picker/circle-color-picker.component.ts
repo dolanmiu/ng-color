@@ -8,26 +8,8 @@ import { SaturationLightness } from '../shared/hsl/saturation-lightness';
 
 @Component({
     selector: 'ng-color-circle',
-    styles: [`
-        :host {
-            display: block;
-            height: 500px;
-            width: 500px;
-            position: relative;
-        }
-
-        .middle {
-            position: absolute;
-            top: 27%;
-            left: 27%;
-            width: 46%;
-            height: 46%;
-        }
-    `],
-    template: `
-        <app-hsl [hue]="hue" [(ngModel)]="saturationLightness" (ngModelChange)="calculateColor()" class="middle"></app-hsl>
-        <app-hue [(ngModel)]="hue" (ngModelChange)="calculateColor()"></app-hue>
-    `,
+    styleUrls: ['./circle-color-picker.component.scss'],
+    templateUrl: './circle-color-picker.component.html',
     providers: [{
         provide: NG_VALUE_ACCESSOR,
         useExisting: forwardRef(() => CircleColorPickerComponent),

@@ -7,11 +7,7 @@ import { IMAGE } from './box-hue-image';
 
 @Component({
     selector: 'app-hue',
-    template: `
-        <div appMouseHandler [rgX]="1" (newValue)="setHue($event)" class="hue">
-            <app-cursor [position]="cursorPosition"></app-cursor>
-        </div>
-    `,
+    templateUrl: './box-hue.component.html',
     styles: [`
         :host {
             display: block;
