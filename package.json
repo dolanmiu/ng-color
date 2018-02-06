@@ -82,7 +82,7 @@
     "sass-lint": "^1.12.1",
     "ts-node": "~2.0.0",
     "tslint": "^5.8.0",
-    "typescript": "2.2.0",
+    "typescript": "2.7.1",
     "zone.js": "^0.8.4"
   },
   "engines": {
