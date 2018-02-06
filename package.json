@@ -10,8 +10,6 @@
     "lint": "tslint --project .",
     "test": "tsc && karma start",
     "start": "http-server example",
-    "prepublishOnly": "npm run build",
-    "publish": "npm publish dist",
     "sass-lint": "sass-lint \"src/**/*.scss\" -v -q",
     "style": "prettier -l --trailing-comma all --print-width 140 --arrow-parens always --single-quote true \"src/**/*.ts\""
   },
