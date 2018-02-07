@@ -43,5 +43,11 @@ dist
 # Typings
 typings
 
-# VSCode
-.vscode
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+.ng_pkg_build

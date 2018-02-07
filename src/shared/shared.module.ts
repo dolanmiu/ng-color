@@ -5,17 +5,9 @@ import { ColorUtilityService } from './color-utility/color-utility.service';
 import { MouseHandlerDirective } from './mouse-handler/mouse-handler.directive';
 
 @NgModule({
-    imports: [
-        CommonModule,
-    ],
-    declarations: [
-        MouseHandlerDirective,
-    ],
-    exports: [
-        MouseHandlerDirective,
-    ],
-    providers: [
-        ColorUtilityService,
-    ],
+    imports: [CommonModule],
+    declarations: [MouseHandlerDirective],
+    exports: [MouseHandlerDirective],
+    providers: [ColorUtilityService],
 })
-export class SharedModule { }
+export class SharedModule {}

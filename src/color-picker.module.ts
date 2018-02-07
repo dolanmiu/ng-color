@@ -6,16 +6,9 @@ import { BoxColorPickerModule } from './box-color-picker/box-color-picker.module
 import { CircleColorPickerModule } from './circle-color-picker/circle-color-picker.module';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-    ],
-    declarations: [
-    ],
-    exports: [
-        CircleColorPickerModule,
-        BoxColorPickerModule,
-    ],
+    imports: [CommonModule, FormsModule],
+    declarations: [],
+    exports: [CircleColorPickerModule, BoxColorPickerModule],
 })
 export class NgColorModule {
     public static forRoot(): ModuleWithProviders {

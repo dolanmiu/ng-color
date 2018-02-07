@@ -5,14 +5,16 @@
     "moduleResolution": "node",
     "rootDir": "./src",
     "lib": [
-      "es2015",
+      "es2016",
       "dom"
     ],
+    "target": "es5",
     "skipLibCheck": true,
     "noUnusedLocals": true,
     "types": []
   },
   "exclude": [
-    "example"
+    "example",
+    "node_modules"
   ]
 }

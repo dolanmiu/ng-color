@@ -9,19 +9,8 @@ import { BoxHslComponent } from './box-hsl/box-hsl.component';
 import { BoxHueComponent } from './box-hue/box-hue.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        SharedModule,
-        FormsModule,
-    ],
-    declarations: [
-        BoxColorPickerComponent,
-        BoxHueComponent,
-        BoxHslComponent,
-        BoxCursorComponent,
-    ],
-    exports: [
-        BoxColorPickerComponent,
-    ],
+    imports: [CommonModule, SharedModule, FormsModule],
+    declarations: [BoxColorPickerComponent, BoxHueComponent, BoxHslComponent, BoxCursorComponent],
+    exports: [BoxColorPickerComponent],
 })
-export class BoxColorPickerModule { }
+export class BoxColorPickerModule {}

@@ -4,10 +4,9 @@ import { Vector } from '../../vector';
 
 @Component({
     selector: 'app-cursor',
-    template: `
-        <div class="cursor" [style.left.px]="position?.x" [style.top.px]="position?.y"></div>
-    `,
-    styles: [`
+    templateUrl: './circle-cursor.component.html',
+    styles: [
+        `
         .cursor {
             cursor: pointer;
             position: relative;
@@ -17,11 +16,11 @@ import { Vector } from '../../vector';
             box-shadow: 0px 0px 0px 2px #222 inset;
             transform: translate(-10px, -10px);
         }
-    `],
+    `,
+    ],
 })
 export class CursorComponent {
     @Input() public position: Vector;
 
-    constructor() {
-    }
+    constructor() {}
 }

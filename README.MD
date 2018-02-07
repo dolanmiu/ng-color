@@ -13,8 +13,9 @@
 
 ---
 
-[![Chat on Gitter][gitter-image]][gitter-url] 
+[![Chat on Gitter][gitter-image]][gitter-url]
 [![Build Status][travis-image]][travis-url]
+[![code style: prettier][prettier-image]][prettier-url]
 
 ## Demos
 
@@ -113,3 +114,6 @@ Made with 💖 by Dolan Miu 🍆 💦 😝
 
 [travis-image]: https://travis-ci.org/dolanmiu/ng-color.svg?branch=master
 [travis-url]: https://travis-ci.org/dolanmiu/ng-color
+
+[prettier-image]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg
+[prettier-url]: https://github.com/prettier/prettier

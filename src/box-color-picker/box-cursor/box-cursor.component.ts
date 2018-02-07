@@ -4,24 +4,8 @@ import { Vector } from '../../vector';
 
 @Component({
     selector: 'app-cursor',
-    template: `
-        <div class="cursor" [style.left.px]="position?.x" [style.top.px]="position?.y" [ngClass]="{'offset': bothAxis}"></div>
-    `,
-    styles: [`
-        .cursor {
-            cursor: pointer;
-            position: relative;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            transform: translate(-10px, 0px);
-            box-shadow: 0px 0px 0px 2px #222 inset;
-        }
-
-        .offset {
-            transform: translate(-10px, -10px);
-        }
-    `],
+    templateUrl: './box-cursor.component.html',
+    styleUrls: ['./box-cursor.component.scss'],
 })
 export class BoxCursorComponent {
     @Input() public position: Vector;

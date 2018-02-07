@@ -8,26 +8,15 @@ import { SaturationLightness } from '../shared/hsl/saturation-lightness';
 
 @Component({
     selector: 'ng-color-box, ng-color-basic, ng-color-basic-preview',
-    styles: [`
-        :host {
-            display: block;
-            height: 200px;
-            position: relative;
-        }
-
-        .middle {
-            height: calc(100% - 36px);
-        }
-    `],
-    template: `
-        <app-hsl [hue]="hue" [(ngModel)]="saturationLightness" (ngModelChange)="calculateColor()" class="middle"></app-hsl>
-        <app-hue [(ngModel)]="hue" (ngModelChange)="calculateColor()"></app-hue>
-    `,
-    providers: [{
-        provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => BoxColorPickerComponent),
-        multi: true,
-    }],
+    styleUrls: ['./box-color-picker.component.scss'],
+    templateUrl: './box-color-picker.component.html',
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => BoxColorPickerComponent),
+            multi: true,
+        },
+    ],
 })
 export class BoxColorPickerComponent implements ControlValueAccessor, OnInit {
     @Input() public startHex: string;
@@ -42,8 +31,8 @@ export class BoxColorPickerComponent implements ControlValueAccessor, OnInit {
             lightness: 0,
         };
         this.hue = 0;
-        this.onTouchedCallback = () => { };
-        this.onChangeCallback = () => { };
+        this.onTouchedCallback = () => {};
+        this.onChangeCallback = () => {};
     }
 
     public ngOnInit(): void {
@@ -53,12 +42,20 @@ export class BoxColorPickerComponent implements ControlValueAccessor, OnInit {
             saturation: hsl.saturation,
             lightness: hsl.lightness,
         };
-        const colorOutput = this.colorUtility.createColorOutput(this.hue * 360, this.saturationLightness.saturation * 100, this.saturationLightness.lightness * 100);
+        const colorOutput = this.colorUtility.createColorOutput(
+            this.hue * 360,
+            this.saturationLightness.saturation * 100,
+            this.saturationLightness.lightness * 100,
+        );
         this.onChangeCallback(colorOutput);
     }
 
     public calculateColor(): void {
-        const colorOutput = this.colorUtility.createColorOutput(this.hue * 360, this.saturationLightness.saturation * 100, this.saturationLightness.lightness * 100);
+        const colorOutput = this.colorUtility.createColorOutput(
+            this.hue * 360,
+            this.saturationLightness.saturation * 100,
+            this.saturationLightness.lightness * 100,
+        );
         this.onChangeCallback(colorOutput);
     }
 
