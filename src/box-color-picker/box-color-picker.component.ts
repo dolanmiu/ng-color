@@ -2,7 +2,7 @@
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { ColorOutput } from '../shared/color-utility/color-output';
+import { ColorOutput } from '../color-output';
 import { ColorUtilityService } from '../shared/color-utility/color-utility.service';
 import { SaturationLightness } from '../shared/hsl/saturation-lightness';
 
