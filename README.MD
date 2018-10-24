@@ -19,9 +19,9 @@
 
 ## Demos
 
-#### Plunkr
+#### StackBlitz
 
-http://plnkr.co/edit/KqVZ4WnFH0xeAqgOdy3R?p=preview
+https://stackblitz.com/edit/angular-antayn
 
 #### Run example folder locally (mac/unix only)
 
