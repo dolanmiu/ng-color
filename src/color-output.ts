@@ -1,4 +1,4 @@
-import { Rgb } from './rgb';
+import { Rgb } from './shared/color-utility/rgb';
 
 export interface ColorOutput {
     rgb: Rgb;

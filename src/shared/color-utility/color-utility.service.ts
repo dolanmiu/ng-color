@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as convert from 'color-convert';
 
-import { ColorOutput } from './color-output';
+import { ColorOutput } from '../../color-output';
 import { Hsl } from './hsl';
 import { Rgb } from './rgb';
 
