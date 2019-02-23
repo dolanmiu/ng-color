@@ -29,11 +29,11 @@ export class ColorUtilityService {
 
     public calculateHslFromHex(v: string): Hsl {
         const rgb = convert.hex.rgb(v);
-        const hsl = convert.rgb.hsl(rgb);
+        const [hue, saturation, lightness] = convert.rgb.hsl(rgb);
         return {
-            hue: hsl[0] / 360,
-            saturation: hsl[1] / 100,
-            lightness: hsl[2] / 100,
+            hue: hue / 360,
+            saturation: saturation / 100,
+            lightness: lightness / 100,
         };
     }
 
