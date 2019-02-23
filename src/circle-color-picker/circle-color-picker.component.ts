@@ -4,6 +4,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { ColorOutput } from '../color-output';
 import { ColorUtilityService } from '../shared/color-utility/color-utility.service';
+import { Hsl } from '../shared/color-utility/hsl';
 import { SaturationLightness } from '../shared/hsl/saturation-lightness';
 
 @Component({
@@ -37,17 +38,8 @@ export class CircleColorPickerComponent implements ControlValueAccessor, OnInit 
 
     public ngOnInit(): void {
         const hsl = this.colorUtility.calculateHslFromHex(this.startHex || 'ff0000');
-        this.hue = hsl.hue;
-        this.saturationLightness = {
-            saturation: hsl.saturation,
-            lightness: hsl.lightness,
-        };
-        const colorOutput = this.colorUtility.createColorOutput(
-            this.hue * 360,
-            this.saturationLightness.saturation * 100,
-            this.saturationLightness.lightness * 100,
-        );
-        this.onChangeCallback(colorOutput);
+        this.setHsl(hsl);
+        this.calculateColor();
     }
 
     public calculateColor(): void {
@@ -67,5 +59,13 @@ export class CircleColorPickerComponent implements ControlValueAccessor, OnInit 
     }
     public registerOnTouched(fn: () => void): void {
         this.onTouchedCallback = fn;
+    }
+
+    private setHsl(hsl: Hsl): void {
+        this.hue = hsl.hue;
+        this.saturationLightness = {
+            saturation: hsl.saturation,
+            lightness: hsl.lightness,
+        };
     }
 }
