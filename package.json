@@ -88,6 +88,6 @@
   },
   "dependencies": {
     "@types/color-convert": "^1.9.0",
-    "color-convert": "^1.9.1"
+    "color-convert": "^2.0.0"
   }
 }
