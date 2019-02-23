@@ -10,20 +10,25 @@ export class ColorUtilityService {
     constructor() {}
 
     public createColorOutput(hue: number, saturation: number, lightness: number): ColorOutput {
-        const rgbArray = convert.hsl.rgb([hue, saturation, lightness]);
+        const [red, green, blue] = convert.hsl.rgb([hue, saturation, lightness]);
 
         const rgb: Rgb = {
-            red: rgbArray[0],
-            green: rgbArray[1],
-            blue: rgbArray[2],
+            red,
+            green,
+            blue,
         };
 
-        const hex = convert.rgb.hex(rgbArray);
+        const hex = convert.rgb.hex([red, green, blue]);
 
         return {
             rgb: rgb,
             hexString: `#${hex}`,
             hex: parseInt(`0x${hex}`, 16),
+            hsl: {
+                hue,
+                saturation,
+                lightness,
+            },
         };
     }
 
