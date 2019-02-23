@@ -35,6 +35,17 @@ export class ColorUtilityService {
     public calculateHslFromHex(v: string): Hsl {
         const rgb = convert.hex.rgb(v);
         const [hue, saturation, lightness] = convert.rgb.hsl(rgb);
+
+        return {
+            hue: hue / 360,
+            saturation: saturation / 100,
+            lightness: lightness / 100,
+        };
+    }
+
+    public calculateHslFromRgb(v: Rgb): Hsl {
+        const [hue, saturation, lightness] = convert.rgb.hsl([v.red, v.green, v.blue]);
+
         return {
             hue: hue / 360,
             saturation: saturation / 100,
