@@ -86,6 +86,7 @@ export class CircleHueComponent implements ControlValueAccessor {
 
         const hue = (-angle + Math.PI) / (2 * Math.PI);
         this.onChangeCallback(hue);
+        this.onTouchedCallback();
     }
 
     private getCoordinateFromRadius(radius: number, angle: number): Vector {

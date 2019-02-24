@@ -72,5 +72,6 @@ export class BoxHueComponent implements ControlValueAccessor {
 
         const hue = mouseEvent.v / mouseEvent.rg;
         this.onChangeCallback(hue);
+        this.onTouchedCallback();
     }
 }
