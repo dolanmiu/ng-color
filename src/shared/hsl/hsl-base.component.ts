@@ -68,18 +68,17 @@ export class HslBaseComponent implements ControlValueAccessor {
             return;
         }
 
-        if (!v.saturation || !v.lightness) {
+        if (v.saturation === undefined || v.lightness === undefined) {
             return;
         }
 
-        const yScaleFactor = 1 / (v.saturation + 1);
-        console.log(yScaleFactor);
+        this.cursorPosition = {
+            x: v.saturation * this.el.nativeElement.offsetWidth,
+            y: this.el.nativeElement.offsetHeight - v.lightness * (v.saturation + 1) * this.el.nativeElement.offsetHeight,
+        };
 
-        this.cursorPosition.x = v.saturation * this.el.nativeElement.offsetWidth;
-        this.cursorPosition.y = (1 - v.lightness) * this.el.nativeElement.offsetHeight;
         this.saturation = v.saturation;
         this.lightness = v.lightness;
-        console.log(this.cursorPosition);
     }
 
     public registerOnChange(fn: (_: SaturationLightness) => void): void {

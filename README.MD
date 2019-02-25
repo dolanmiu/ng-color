@@ -52,22 +52,23 @@ import { AppComponent } from './app.component';
 import { NgColorModule } from 'ng-color';
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
+    declarations: [AppComponent],
     imports: [
         BrowserModule,
-        NgColorModule // Specify your library as an import
+        NgColorModule, // Inlude in @NgModule
     ],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
 ```
+
 Once your library is imported, you can use the component in your Angular application shown below.
 
 ### Color Pickers
+
 #### Box
+
 What it looks like is shown in the header
 
 ```html
@@ -79,6 +80,7 @@ What it looks like is shown in the header
 ```
 
 #### Circle
+
 What it looks like is shown in the header
 
 ```html
@@ -89,9 +91,51 @@ What it looks like is shown in the header
 <ng-color-circle (ngModelChange)="colorChange($event)"></ng-color-circle>
 ```
 
+#### NgModel and setting the initial color
+
+The `ngModel` is of the following format. You can use two-way or one-way binding:
+
+```ts
+export interface ColorOutput {
+    rgb: Rgb;
+    hex: number;
+    hexString: string;
+    hsl: Hsl;
+}
+```
+
+Or equivalently:
+
+```ts
+export interface ColorOutput {
+    rgb: {
+        red: number; // 0 - 255
+        green: number; // 0 - 255
+        blue: number; // 0 - 255
+    };
+    hex: number;
+    hexString: string;
+    hsl: {
+        hue: number; // 0 - 360
+        saturation: number; // 0 - 100
+        lightness: number; // 0 - 100
+    };
+}
+```
+
+Setting these partially also works, this library will resolve all the other components out on the next change detection cycle.
+
+Therefore, you can set the **initial color** of the picker by doing:
+
+```ts
+const color = {
+    hexString: '#ff56d3',
+};
+```
+
 ## Development
 
-To generate all `*.js`, `*.js.map` and `*.d.ts` files:
+To build using `ng-packagr`:
 
 ```bash
 $ npm run build
@@ -111,9 +155,7 @@ Made with 💖 by Dolan Miu 🍆 💦 😝
 
 [gitter-image]: https://badges.gitter.im/dolanmiu/ng-color.svg
 [gitter-url]: https://gitter.im/ng-color/Lobby
-
 [travis-image]: https://travis-ci.org/dolanmiu/ng-color.svg?branch=master
 [travis-url]: https://travis-ci.org/dolanmiu/ng-color
-
 [prettier-image]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg
 [prettier-url]: https://github.com/prettier/prettier
