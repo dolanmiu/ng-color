@@ -128,9 +128,15 @@ Setting these partially also works, this library will resolve all the other comp
 Therefore, you can set the **initial color** of the picker by doing:
 
 ```ts
-const color = {
+this.myColor = {
     hexString: '#ff56d3',
 };
+```
+
+In the `html`:
+
+```html
+<ng-color-box [(ngModel)]="myColor"></ng-color-box>
 ```
 
 ## Development
