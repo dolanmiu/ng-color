@@ -113,8 +113,8 @@ export interface ColorOutput {
         green: number; // 0 - 255
         blue: number; // 0 - 255
     };
-    hex: number;
-    hexString: string;
+    hex: number; // 0 - 16777215
+    hexString: string; // #000000 - #ffffff
     hsl: {
         hue: number; // 0 - 360
         saturation: number; // 0 - 100
