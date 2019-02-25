@@ -21,7 +21,7 @@
 
 #### StackBlitz
 
-https://stackblitz.com/edit/angular-antayn
+https://stackblitz.com/edit/ng-color-demo
 
 #### Run example folder locally (mac/unix only)
 
