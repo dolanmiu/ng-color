@@ -17,6 +17,11 @@ import { ColorOutput, NgColorModule } from 'ng-color';
             {{color | json}}
             {{dench | json}}
 
+            <h4>Using ngModel instead of startHex to set initial value</h4>
+            <ng-color-box [(ngModel)]="coolColor"></ng-color-box>
+            {{coolColor | json}}
+            <ng-color-box [(ngModel)]="coolColor"></ng-color-box>
+
             <h4>Not using startHex</h4>
             <ng-color-box></ng-color-box>
 
@@ -28,6 +33,13 @@ import { ColorOutput, NgColorModule } from 'ng-color';
             <h4>Using startHex</h4>
             <ng-color-circle [(ngModel)]="test5" startHex="23bf26"></ng-color-circle>
             {{test5 | json}}
+
+            <h4>Using ngModel instead of startHex to set initial value</h4>
+            <ng-color-circle [(ngModel)]="coolColor"></ng-color-circle>
+            {{coolColor | json}}
+
+            // <h5>Sharing same ngModel</h5>
+            // <ng-color-circle [(ngModel)]="test5" startHex="23bf26"></ng-color-circle>
 
             <h4>Not using startHex</h4>
             <ng-color-circle [(ngModel)]="test3"></ng-color-circle>
@@ -42,9 +54,19 @@ import { ColorOutput, NgColorModule } from 'ng-color';
 export class AppComponent {
     public name: string;
     public color: ColorOutput;
+    public coolColor: ColorOutput;
 
     constructor() {
         this.name = 'Angular2';
+        this.coolColor = {
+            rgb: {
+                red: 96.01876026397416,
+                green: 32.38925361900125,
+                blue: 131.19283536585365,
+            },
+            hexString: '#602083',
+            hex: 6299779,
+        };
     }
 
     public colorChange(color: ColorOutput): void {

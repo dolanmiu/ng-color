@@ -49,10 +49,29 @@ export class BoxColorPickerComponent implements ControlValueAccessor, OnInit {
             this.saturationLightness.lightness * 100,
         );
         this.onChangeCallback(colorOutput);
+        this.onTouchedCallback();
     }
 
     public writeValue(obj: ColorOutput): void {
-        // TODO
+        if (!obj) {
+            return;
+        }
+
+        const hexValue = obj.hexString || obj.hex.toString();
+        if (obj.hsl) {
+            this.setHsl({
+                hue: obj.hsl.hue / 360,
+                saturation: obj.hsl.saturation / 100,
+                lightness: obj.hsl.lightness / 100,
+            });
+        } else if (hexValue) {
+            // if hsl cant be found, then try calculate it
+            const hsl = this.colorUtility.calculateHslFromHex(hexValue);
+            this.setHsl(hsl);
+        } else if (obj.rgb) {
+            const hsl = this.colorUtility.calculateHslFromRgb(obj.rgb);
+            this.setHsl(hsl);
+        }
     }
     public registerOnChange(fn: (_: ColorOutput) => void): void {
         this.onChangeCallback = fn;

@@ -60,10 +60,11 @@ export class HslBaseComponent implements ControlValueAccessor {
         this.saturation = v.saturation;
         this.lightness = v.lightness;
         this.onChangeCallback(v);
+        this.onTouchedCallback();
     }
 
     public writeValue(v: SaturationLightness): void {
-        if (v === undefined || v === null) {
+        if (!v) {
             return;
         }
 
@@ -71,10 +72,11 @@ export class HslBaseComponent implements ControlValueAccessor {
             return;
         }
 
-        const yScaleFactor = 1 / (v.saturation + 1);
+        this.cursorPosition = {
+            x: v.saturation * this.el.nativeElement.offsetWidth,
+            y: this.el.nativeElement.offsetHeight - v.lightness * (v.saturation + 1) * this.el.nativeElement.offsetHeight,
+        };
 
-        this.cursorPosition.x = v.saturation * this.el.nativeElement.offsetWidth;
-        this.cursorPosition.y = (1 - v.lightness) * this.el.nativeElement.offsetHeight * yScaleFactor;
         this.saturation = v.saturation;
         this.lightness = v.lightness;
     }

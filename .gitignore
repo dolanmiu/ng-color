@@ -39,6 +39,7 @@ jspm_packages
 # Build directory
 build
 dist
+src/**/*.js
 
 # Typings
 typings
